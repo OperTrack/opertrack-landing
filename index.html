@@ -333,10 +333,15 @@
     b.style.display='none';ajustar(false);
     localStorage.setItem('op_cintillo_f30','1');
   };
-  if(!localStorage.getItem('op_cintillo_f30')){
+  function activar(){
     b.style.display='block';
     ajustar(true);
     window.addEventListener('resize',function(){if(b.style.display!=='none')ajustar(true);});
+  }
+  if(!localStorage.getItem('op_cintillo_f30')){
+    if(document.readyState==='loading'){
+      document.addEventListener('DOMContentLoaded',activar);
+    } else { activar(); }
   }
 })();
 </script>
