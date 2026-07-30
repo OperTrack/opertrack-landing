@@ -309,16 +309,37 @@
 </style>
 </head>
 <body>
-<div id="cintillo-fundador" style="display:none;background:linear-gradient(90deg,#042C53,#185FA5);color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;padding:9px 40px 9px 16px;text-align:center;position:relative;line-height:1.5">
+<div id="cintillo-fundador" style="display:none;position:fixed;top:0;left:0;right:0;z-index:1000;background:linear-gradient(90deg,#042C53,#185FA5);color:#fff;font-family:'Inter',sans-serif;font-size:13.5px;padding:9px 40px 9px 16px;text-align:center;line-height:1.5">
   <span style="background:#378ADD;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.5px;padding:2px 8px;border-radius:10px;margin-right:8px;vertical-align:1px">LANZAMIENTO</span>
   Precio de fundador: <strong>30% de descuento tus primeros 6 meses</strong> con el código
   <strong style="background:rgba(255,255,255,.16);padding:1px 8px;border-radius:6px;letter-spacing:.5px">FUNDADOR30</strong>
   — cupos limitados.
   <a href="https://app.opertrack.com" style="color:#fff;font-weight:700;text-decoration:underline;margin-left:6px">Empieza gratis →</a>
-  <button onclick="document.getElementById('cintillo-fundador').style.display='none';localStorage.setItem('op_cintillo_f30','1')" aria-label="Cerrar"
+  <button onclick="opCerrarCintillo()" aria-label="Cerrar"
     style="position:absolute;right:10px;top:50%;transform:translateY(-50%);background:none;border:none;color:#CFE3F7;font-size:17px;cursor:pointer;padding:4px">×</button>
 </div>
-<script>if(!localStorage.getItem('op_cintillo_f30')){document.getElementById('cintillo-fundador').style.display='block';}</script>
+<script>
+(function(){
+  var b=document.getElementById('cintillo-fundador');
+  function ajustar(on){
+    var h=on?b.offsetHeight:0;
+    var nav=document.querySelector('nav');
+    if(nav)nav.style.top=h+'px';
+    var menu=document.querySelector('.mobile-menu');
+    if(menu)menu.style.top=(68+h)+'px';
+    document.body.style.paddingTop=h+'px';
+  }
+  window.opCerrarCintillo=function(){
+    b.style.display='none';ajustar(false);
+    localStorage.setItem('op_cintillo_f30','1');
+  };
+  if(!localStorage.getItem('op_cintillo_f30')){
+    b.style.display='block';
+    ajustar(true);
+    window.addEventListener('resize',function(){if(b.style.display!=='none')ajustar(true);});
+  }
+})();
+</script>
 
 
 <!-- NAV -->
