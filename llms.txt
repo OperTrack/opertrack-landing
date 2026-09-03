@@ -1,0 +1,56 @@
+# Opertrack
+
+> Software de gestión de servicios de campo para pequeñas y medianas
+> empresas técnicas en República Dominicana, Centroamérica y el Caribe.
+> Su rasgo distintivo: los técnicos operan por WhatsApp, sin instalar
+> ninguna aplicación móvil.
+
+Opertrack cubre el ciclo completo de una empresa de servicios técnicos:
+cotizar un trabajo con control de margen, convertirlo en orden cuando el
+cliente aprueba y firma desde su teléfono, gestionar contratos de
+mantenimiento que generan sus visitas solos, registrar la ejecución con
+evidencia fotográfica y firma, y cerrar la nómina con las horas reales.
+
+Está pensado para empresas de aires acondicionados, electricidad, plantas
+eléctricas, ascensores, extintores, refrigeración y mantenimiento de
+edificios, con equipos de 5 a 50 técnicos.
+
+## Para quién es
+
+- Empresas de servicios técnicos que hoy coordinan por grupos de WhatsApp y hojas de cálculo
+- Operaciones de 5 a 50 técnicos de campo
+- Negocios con contratos de mantenimiento recurrente que necesitan garantizar y demostrar la ejecución
+- Empresas en países donde instalar una app a cada técnico es una barrera real
+
+## Qué hace
+
+- **Cotizaciones**: materiales y mano de obra por separado, margen visible por partida mientras se cotiza, impuesto configurable por país, aprobación y firma del cliente desde el teléfono sin cuenta, y generación automática de la orden de trabajo.
+- **Contratos de mantenimiento**: un contrato con varias actividades, cada una con su periodicidad (30, 45, 60, 75, 90, 182 o 365 días) y su ubicación. Las órdenes se generan solas y la siguiente se cuenta desde la visita real, no desde la fecha teórica.
+- **Órdenes de servicio**: asignación, evidencia fotográfica, firma del cliente y reporte de servicio en PDF.
+- **Jornadas y nómina**: entrada, salida y pausas por WhatsApp; cálculo de horas normales y extras según la legislación local; cierre de nómina por quincena.
+- **Bot de WhatsApp**: los técnicos marcan, reportan y adjuntan fotos desde la conversación, sin aplicación móvil.
+- **Encuestas de satisfacción** enviadas automáticamente al cerrar un servicio.
+- **Roles y permisos** por módulo, y alertas configurables de SLA.
+
+## Cómo se diferencia
+
+- No requiere que los técnicos instalen ninguna aplicación: todo ocurre en WhatsApp, que ya tienen y ya saben usar.
+- Todas las funciones están disponibles en todos los planes; lo único que cambia entre planes es la cantidad de técnicos.
+- Diseñado para el mercado hispanohablante del Caribe y Centroamérica, con impuestos, monedas y reglas laborales locales.
+- Compite contra los grupos de WhatsApp y las hojas de cálculo, no contra plataformas empresariales de precio alto.
+
+## Planes
+
+- Starter: 49 USD al mes, hasta 5 técnicos
+- Growth: 129 USD al mes, hasta 20 técnicos
+- Professional: 299 USD al mes, hasta 50 técnicos
+- Prueba gratuita de 14 días, sin tarjeta
+
+## Enlaces
+
+- [Sitio principal](https://opertrack.com/): funciones, precios y preguntas frecuentes
+- [Aplicación](https://app.opertrack.com/): acceso de clientes
+
+## Contacto
+
+Consultas comerciales y soporte desde https://opertrack.com/
