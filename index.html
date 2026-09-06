@@ -244,31 +244,213 @@
   .btn-hero-ghost:hover { border-color: white; background: rgba(255,255,255,0.08); }
   .hero-note { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.5); }
 
-  /* Hero mockup */
+  /* Hero demo web nativo: Portal Opertrack → WhatsApp del técnico → Firma del cliente */
   .hero-visual {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 16px; padding: 24px;
-    backdrop-filter: blur(4px);
+    background: rgba(255,255,255,0.065);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 20px;
+    padding: 14px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 28px 80px rgba(0,0,0,.26);
   }
-  .mockup-bar { display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
-  .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
-  .mockup-title { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); margin-left: 8px; letter-spacing: 0.5px; }
-  .mockup-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
-  .mockup-stat { background: rgba(255,255,255,0.08); border-radius: 10px; padding: 14px 12px; border: 1px solid rgba(255,255,255,0.1); }
-  .mockup-stat-val { font-size: 22px; font-weight: 700; color: white; line-height: 1; }
-  .mockup-stat-label { font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 4px; font-weight: 500; }
-  .mockup-stat-green { color: #4ade80; }
-  .mockup-list { display: flex; flex-direction: column; gap: 8px; }
-  .mockup-row { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.06); border-radius: 8px; padding: 10px 12px; border: 1px solid rgba(255,255,255,0.08); }
-  .mockup-avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; color: white; flex-shrink: 0; }
-  .mockup-row-info { flex: 1; min-width: 0; }
-  .mockup-row-name { font-size: 12px; font-weight: 600; color: white; }
-  .mockup-row-sub { font-size: 10px; color: rgba(255,255,255,0.45); margin-top: 1px; }
-  .mockup-badge { font-size: 9px; font-weight: 700; padding: 3px 8px; border-radius: 20px; flex-shrink: 0; }
-  .badge-green { background: rgba(74,222,128,0.2); color: #4ade80; }
-  .badge-yellow { background: rgba(251,191,36,0.2); color: #fbbf24; }
-  .badge-blue { background: rgba(55,138,221,0.25); color: var(--light); }
+  .demo-topbar { display:flex; align-items:center; gap:6px; padding:2px 4px 10px; }
+  .mockup-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
+  .mockup-title { font-size:11px; font-weight:700; color:rgba(255,255,255,.58); margin-left:8px; letter-spacing:.65px; }
+  .demo-stagebar { display:flex; align-items:center; gap:8px; margin:0 2px 10px; overflow:hidden; }
+  .demo-step {
+    display:inline-flex; align-items:center; justify-content:center;
+    min-width:0; padding:7px 10px; border-radius:999px;
+    border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.055);
+    color:rgba(255,255,255,.48); font-size:10px; line-height:1; font-weight:700;
+    white-space:nowrap; transition:all .35s ease;
+  }
+  .demo-step.active { color:white; background:rgba(55,138,221,.28); border-color:rgba(105,174,240,.62); box-shadow:0 0 0 1px rgba(55,138,221,.08) inset; }
+  .demo-arrow { color:rgba(255,255,255,.28); font-size:13px; }
+
+  .demo-canvas {
+    position:relative; overflow:hidden; border-radius:14px;
+    aspect-ratio: 4 / 3; min-height:360px;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(55,138,221,.20), transparent 34%),
+      linear-gradient(145deg,#061c31 0%,#082d50 50%,#071b2d 100%);
+    border:1px solid rgba(255,255,255,.10); isolation:isolate;
+  }
+  .demo-canvas::before {
+    content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
+    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size:24px 24px; mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent 88%);
+  }
+
+  .app-window {
+    position:absolute; z-index:2; inset:16px 14px 16px 14px;
+    background:#f7f9fc; border:1px solid rgba(255,255,255,.65); border-radius:13px;
+    overflow:hidden; box-shadow:0 24px 55px rgba(0,0,0,.32);
+    transform-origin:left center; transition:transform .75s cubic-bezier(.22,1,.36,1),opacity .55s ease,filter .55s ease;
+  }
+  .browser-bar { height:35px; display:flex; align-items:center; gap:7px; padding:0 10px; background:#fff; border-bottom:1px solid #e7edf4; }
+  .browser-dots { display:flex; gap:5px; flex-shrink:0; }
+  .browser-dots i { display:block; width:7px; height:7px; border-radius:50%; background:#d9e1ea; }
+  .browser-address { flex:1; height:20px; border-radius:7px; background:#f3f6f9; color:#8394a7; font-size:8px; display:flex; align-items:center; justify-content:center; letter-spacing:.1px; }
+  .browser-lock { font-size:8px; color:#7890a7; }
+
+  .app-screen { height:calc(100% - 35px); background:#eef3f8; padding:11px; }
+  .order-card { height:100%; background:#fff; border:1px solid #dce5ee; border-radius:10px; padding:12px; box-shadow:0 3px 10px rgba(18,56,89,.06); overflow:hidden; }
+  .order-head { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:9px; }
+  .order-title { color:#17324c; font-weight:800; font-size:12px; line-height:1.15; }
+  .order-sub { color:#8b9cad; font-size:7px; margin-top:3px; }
+  .order-x { color:#92a2b2; font-size:12px; line-height:1; }
+  .order-tabs { display:flex; gap:5px; margin-bottom:9px; }
+  .order-tab { font-size:7px; color:#6d8092; padding:4px 7px; border:1px solid #e0e7ee; border-radius:999px; background:#fafbfd; }
+  .order-tab.selected { color:#6f42c1; border-color:#b99adf; background:#f6f0fb; font-weight:700; }
+  .demo-grid { display:grid; grid-template-columns:1fr 1fr; gap:7px 8px; }
+  .demo-field { position:relative; min-width:0; }
+  .demo-field.span-2 { grid-column:1/-1; }
+  .demo-label { display:block; font-size:7px; color:#536b80; font-weight:700; margin:0 0 3px; }
+  .field-box {
+    min-height:27px; border:1px solid #d6e0e9; border-radius:6px; background:#fff;
+    display:flex; align-items:center; padding:0 8px; color:#345169; font-size:8px;
+    transition:border-color .28s ease,box-shadow .28s ease,background .28s ease,transform .28s ease;
+  }
+  .field-box.multiline { min-height:45px; align-items:flex-start; padding-top:7px; }
+  .field-box.placeholder { color:#a5b3c0; }
+  .field-box.has-chevron::after { content:'⌄'; margin-left:auto; color:#8ca0b2; font-size:10px; }
+  .demo-field.focused .field-box { border-color:#378ADD; box-shadow:0 0 0 3px rgba(55,138,221,.14); background:#fbfdff; transform:translateY(-1px); }
+  .demo-field.completed .field-box { border-color:#c3d4e4; color:#173b5b; }
+  .site-note { display:flex; align-items:center; gap:4px; margin-top:3px; color:#a06a25; font-size:6.5px; }
+  .status-row { display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
+  .status-pill { font-size:7px; padding:4px 8px; border-radius:999px; background:#eaf8f1; color:#2d8c61; border:1px solid #bde7d2; font-weight:700; }
+  .create-order-btn {
+    border:0; border-radius:7px; padding:7px 12px; background:#185FA5; color:white;
+    font:700 8px 'Inter',sans-serif; box-shadow:0 5px 12px rgba(24,95,165,.23);
+    transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+  }
+  .create-order-btn.demo-pressed { transform:scale(.95); background:#0C447C; box-shadow:0 2px 5px rgba(24,95,165,.18); }
+
+  .demo-cursor {
+    position:absolute; z-index:9; left:50%; top:50%; width:22px; height:27px;
+    transition:left .48s cubic-bezier(.22,1,.36,1),top .48s cubic-bezier(.22,1,.36,1),opacity .25s ease,transform .18s ease;
+    filter:drop-shadow(0 2px 3px rgba(0,0,0,.38)); pointer-events:none;
+  }
+  .demo-cursor svg { display:block; width:100%; height:100%; }
+  .demo-cursor::after {
+    content:''; position:absolute; width:9px; height:9px; border:2px solid rgba(55,138,221,.9); border-radius:50%;
+    left:1px; top:1px; opacity:0; transform:scale(.4);
+  }
+  .demo-cursor.clicking { transform:scale(.88); }
+  .demo-cursor.clicking::after { animation:demoClick .52s ease-out; }
+  @keyframes demoClick { 0%{opacity:.9;transform:scale(.4)} 100%{opacity:0;transform:scale(3.2)} }
+
+  .order-success {
+    position:absolute; z-index:8; left:50%; top:50%; transform:translate(-50%,-42%) scale(.9);
+    width:min(280px,72%); padding:15px 18px; border-radius:13px;
+    background:rgba(7,31,52,.93); border:1px solid rgba(255,255,255,.16); box-shadow:0 20px 48px rgba(0,0,0,.34);
+    color:#fff; opacity:0; pointer-events:none; transition:opacity .34s ease,transform .42s cubic-bezier(.22,1,.36,1); text-align:center;
+    backdrop-filter:blur(14px);
+  }
+  .order-success.show { opacity:1; transform:translate(-50%,-50%) scale(1); }
+  .success-check { width:30px; height:30px; margin:0 auto 7px; border-radius:50%; display:grid; place-items:center; background:#2eb67d; font-size:16px; font-weight:800; }
+  .success-title { font-size:12px; font-weight:800; }
+  .success-sub { color:#bfd0df; font-size:8px; margin-top:4px; }
+
+  .phone-shell {
+    position:absolute; z-index:6; top:18px; right:18px; width:50%; height:calc(100% - 36px);
+    border-radius:28px; padding:6px; background:linear-gradient(150deg,#323943,#0c1015 42%,#242a32);
+    box-shadow:0 28px 65px rgba(0,0,0,.48); opacity:0; transform:translateX(125%) scale(.90) rotate(1deg);
+    transition:transform .82s cubic-bezier(.16,1,.3,1),opacity .45s ease; pointer-events:none;
+  }
+  .phone-shell::before { content:''; position:absolute; width:30%; height:10px; border-radius:0 0 9px 9px; background:#0a0d11; left:35%; top:5px; z-index:3; }
+  .phone-screen { height:100%; border-radius:23px; overflow:hidden; background:#0b141a; color:#e9edef; display:flex; flex-direction:column; position:relative; }
+  .wa-head { height:43px; padding:9px 9px 7px; display:flex; align-items:center; gap:7px; background:#202c33; flex-shrink:0; }
+  .wa-avatar { width:23px; height:23px; border-radius:50%; display:grid; place-items:center; background:#593d90; color:white; font-size:7px; font-weight:800; }
+  .wa-name { font-size:8px; font-weight:700; }
+  .wa-online { font-size:6px; color:#93a4ad; margin-top:1px; }
+  .wa-phase { margin-left:auto; max-width:104px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border:1px solid rgba(83,189,255,.22); background:rgba(0,168,132,.10); color:#9adfcf; border-radius:999px; padding:3px 6px; font-size:5.4px; font-weight:800; letter-spacing:.08px; transition:all .28s ease; }
+  .wa-menu { color:#aebac1; font-size:12px; }
+  .wa-chat { flex:1; padding:9px 8px 10px; display:flex; flex-direction:column; justify-content:flex-start; gap:6px; position:relative; overflow-y:auto; overflow-x:hidden; scroll-behavior:smooth; scrollbar-width:none; }
+  .wa-chat::-webkit-scrollbar { display:none; }
+  .wa-chat::before { content:''; position:absolute; inset:43px 0 42px; opacity:.08; pointer-events:none; background-image:radial-gradient(circle at 20% 20%,#fff 1px,transparent 1.5px); background-size:18px 18px; }
+  .wa-chip { align-self:center; position:relative; z-index:1; font-size:5.7px; padding:3px 7px; border-radius:6px; background:#182229; color:#8696a0; flex:0 0 auto; }
+  .wa-message { position:relative; z-index:1; max-width:96%; border-radius:7px; padding:7px 7px 6px; font-size:6.65px; line-height:1.43; box-shadow:0 1px 1px rgba(0,0,0,.18); display:none; flex:0 0 auto; }
+  .wa-message.in { align-self:flex-start; background:#202c33; border-top-left-radius:2px; }
+  .wa-message.out { align-self:flex-end; background:#005c4b; border-top-right-radius:2px; min-width:58px; }
+  .wa-message.visible { display:block; animation:waBubbleIn .42s cubic-bezier(.22,1,.36,1) both; }
+  .wa-message.phase-focus { box-shadow:0 0 0 1px rgba(83,189,255,.20),0 5px 16px rgba(0,0,0,.15); }
+  @keyframes waBubbleIn { from{opacity:0;transform:translateY(10px) scale(.985)} to{opacity:1;transform:translateY(0) scale(1)} }
+  .wa-message strong { font-weight:800; color:#fff; }
+  .wa-message .wa-time { display:block; text-align:right; color:#8fa1aa; font-size:5px; margin-top:3px; }
+  .wa-message.out .wa-time { color:#91c4b7; }
+  .wa-sep { opacity:.32; letter-spacing:.25px; }
+  .wa-message.long { font-size:6.05px; line-height:1.33; }
+  .wa-message.note { font-size:6.2px; line-height:1.36; }
+  .wa-message.metric strong { color:#b7f3df; }
+  .wa-hours { display:inline-flex; margin:3px 0 2px; padding:2px 5px; border-radius:999px; background:rgba(46,182,125,.16); border:1px solid rgba(46,182,125,.28); color:#a7efd2; font-weight:800; }
+  .wa-input { height:35px; margin:0 6px 7px; border-radius:18px; background:#202c33; display:flex; align-items:center; padding:0 9px; gap:6px; color:#8696a0; font-size:6.5px; flex-shrink:0; }
+  .wa-send { margin-left:auto; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; background:#00a884; color:white; font-size:9px; }
+
+  .wa-view, .sign-view {
+    position:absolute; inset:0; display:flex; flex-direction:column;
+    transition:transform .72s cubic-bezier(.22,1,.36,1),opacity .42s ease;
+  }
+  .wa-view { transform:translateX(0); opacity:1; }
+  .sign-view { transform:translateX(108%); opacity:0; background:#f4f7fb; color:#17324c; }
+  .wa-message.compact { font-size:6.15px; line-height:1.34; }
+  .wa-message.signature-msg { padding-bottom:7px; }
+  .wa-sign-link {
+    display:block; width:100%; margin-top:7px; padding:7px 7px; border:1px solid rgba(83,189,255,.38);
+    border-radius:6px; background:rgba(0,92,75,.48); color:#8ed7ff; text-align:left;
+    font:700 6.3px 'Inter',sans-serif; cursor:default;
+  }
+  .wa-link-text { display:block; margin-top:5px; color:#53bdeb; font-size:5.8px; line-height:1.3; word-break:break-all; }
+  .wa-sign-link.demo-pressed { transform:scale(.97); background:rgba(0,122,100,.72); }
+
+  .sign-browser-bar { height:36px; background:#fff; border-bottom:1px solid #dfe7ef; display:flex; align-items:center; gap:6px; padding:0 8px; flex-shrink:0; }
+  .sign-browser-back,.sign-browser-menu { color:#72859a; font-size:14px; width:16px; text-align:center; }
+  .sign-browser-address { flex:1; height:21px; border-radius:7px; background:#f2f5f8; color:#71869a; display:flex; align-items:center; justify-content:center; font-size:6px; }
+  .sign-page { flex:1; overflow:hidden; padding:11px 10px 10px; position:relative; background:linear-gradient(180deg,#f9fbfd,#eef4f9); }
+  .sign-brand { font-size:8px; font-weight:900; letter-spacing:1.3px; color:#185FA5; margin-bottom:8px; }
+  .sign-form { transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1); }
+  .sign-kicker { display:inline-flex; padding:3px 6px; border-radius:999px; background:#e6f1fb; color:#185FA5; border:1px solid #c8dff0; font-size:5.7px; font-weight:800; }
+  .sign-title { font-size:12px; font-weight:900; color:#113453; margin-top:6px; }
+  .sign-sub { font-size:6px; color:#70869a; line-height:1.4; margin:3px 0 8px; }
+  .sign-detail-row { display:flex; justify-content:space-between; gap:8px; padding:5px 0; border-top:1px solid #e5edf4; font-size:6px; color:#768b9d; }
+  .sign-detail-row strong { color:#294b68; font-weight:800; }
+  .sign-label { display:block; color:#4b657b; font-size:6px; font-weight:800; margin:7px 0 3px; }
+  .sign-name-box { height:25px; border:1px solid #d3dfe9; border-radius:6px; background:#fff; display:flex; align-items:center; padding:0 7px; font-size:6.5px; color:#294b68; }
+  .signature-pad { height:72px; position:relative; border:1.5px dashed #a9c3d8; border-radius:8px; background:#fff; overflow:hidden; transition:border-color .25s ease,box-shadow .25s ease; }
+  .signature-pad.active { border-color:#378ADD; box-shadow:0 0 0 3px rgba(55,138,221,.12); }
+  .signature-pad svg { position:absolute; inset:7px 7px 3px; width:calc(100% - 14px); height:calc(100% - 10px); }
+  .signature-stroke { fill:none; stroke:#183b58; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:430; stroke-dashoffset:430; }
+  .signature-pad.signed .signature-stroke { animation:drawSignature 1.05s ease forwards; }
+  .signature-hint { position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); text-align:center; font-size:6px; color:#9badbb; transition:opacity .2s ease; }
+  .signature-pad.signed .signature-hint { opacity:0; }
+  @keyframes drawSignature { to { stroke-dashoffset:0; } }
+  .sign-confirm-btn { width:100%; border:0; border-radius:7px; margin-top:8px; padding:7px 8px; background:#185FA5; color:#fff; font:800 6.6px 'Inter',sans-serif; box-shadow:0 5px 12px rgba(24,95,165,.19); transition:transform .18s ease,background .18s ease; }
+  .sign-confirm-btn.demo-pressed { transform:scale(.97); background:#0C447C; }
+  .sign-success { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; opacity:0; transform:scale(.92); pointer-events:none; transition:opacity .38s ease,transform .45s cubic-bezier(.22,1,.36,1); }
+  .sign-success-icon { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:#2eb67d; color:#fff; font-size:20px; font-weight:900; box-shadow:0 9px 24px rgba(46,182,125,.25); }
+  .sign-success-title { font-size:12px; font-weight:900; color:#153a59; margin-top:10px; }
+  .sign-success-sub { font-size:6.5px; color:#71879a; margin-top:4px; line-height:1.5; }
+  .sign-success-pill { margin-top:10px; padding:4px 8px; border-radius:999px; background:#e8f7f0; border:1px solid #bce6d0; color:#2b8c60; font-size:6px; font-weight:800; }
+  .sign-view.complete .sign-form { opacity:0; transform:translateY(-8px) scale(.97); }
+  .sign-view.complete .sign-success { opacity:1; transform:scale(1); }
+
+  .hero-web-demo.signature-mode .wa-view { transform:translateX(-108%); opacity:.12; }
+  .hero-web-demo.signature-mode .sign-view { transform:translateX(0); opacity:1; }
+  .hero-web-demo.signature-mode .app-window { transform:translateX(-33%) scale(.74); filter:saturate(.68) brightness(.80); opacity:.42; }
+  .hero-web-demo.signature-mode .phone-shell { transform:translateX(-3%) scale(1.035) rotate(0deg); }
+  .hero-web-demo.phone-mode.cursor-mode .demo-cursor { opacity:1; }
+
+  .hero-web-demo.phone-mode .app-window { transform:translateX(-31%) scale(.76); filter:saturate(.78) brightness(.88); opacity:.62; }
+  .hero-web-demo.phone-mode .phone-shell { opacity:1; transform:translateX(0) scale(1) rotate(0deg); }
+  .hero-web-demo.phone-mode .demo-cursor { opacity:0; }
+  .hero-web-demo.phone-mode.cursor-mode .demo-cursor { opacity:1; }
+
+  .demo-footer { display:flex; align-items:center; justify-content:center; gap:7px; padding:10px 4px 1px; color:rgba(255,255,255,.52); font-size:10px; font-weight:500; }
+  .demo-live-dot { width:6px; height:6px; border-radius:50%; background:#4ade80; box-shadow:0 0 0 4px rgba(74,222,128,.10); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .app-window,.phone-shell,.demo-cursor,.wa-message,.order-success,.field-box,.wa-view,.sign-view,.sign-form,.sign-success { transition:none !important; animation:none !important; }
+  }
 
   /* ── SOCIAL PROOF ── */
   .social-proof { background: var(--gray); padding: 32px 5%; border-bottom: 1px solid var(--border); }
@@ -375,7 +557,11 @@
 
   @media (max-width: 768px) {
     .hero-inner { grid-template-columns: 1fr; }
-    .hero-visual { display: none; }
+    .hero-visual { display:block; width:100%; max-width:620px; margin:8px auto 0; padding:10px; }
+    .demo-canvas { min-height:350px; }
+    .phone-shell { width:52%; right:10px; }
+    .demo-stagebar { gap:5px; }
+    .demo-step { padding:6px 8px; font-size:9px; }
     .proof-divider { display: none; }
     .social-proof-inner { gap: 24px; }
     .hero { padding: 90px 5% 50px; }
@@ -393,6 +579,10 @@
   }
 
   @media (max-width: 480px) {
+    .demo-stagebar { gap:3px; }
+    .demo-arrow { font-size:10px; }
+    .demo-step { padding:5px 6px; font-size:7.6px; }
+    .phone-shell { width:57%; right:6px; }
     .steps { grid-template-columns: 1fr; }
     .hero h1 { font-size: 26px; }
     .social-proof-inner { flex-direction: column; gap: 16px; text-align: center; }
@@ -480,53 +670,225 @@
       </div>
       <p class="hero-note">Sin tarjeta de crédito · Configuración en minutos · Soporte en español</p>
     </div>
-    <div class="hero-visual">
-      <div class="mockup-bar">
+    <div class="hero-visual hero-web-demo" id="heroWebDemo" aria-label="Demo animado: creación de una orden, ejecución por WhatsApp y firma del cliente">
+      <div class="demo-topbar">
         <div class="mockup-dot" style="background:#ef4444"></div>
         <div class="mockup-dot" style="background:#fbbf24"></div>
         <div class="mockup-dot" style="background:#4ade80"></div>
-        <span class="mockup-title">OPERTRACK · DASHBOARD EN VIVO</span>
+        <span class="mockup-title">OPERTRACK · DEMO EN VIVO</span>
       </div>
-      <div class="mockup-stats">
-        <div class="mockup-stat">
-          <div class="mockup-stat-val mockup-stat-green">8</div>
-          <div class="mockup-stat-label">Trabajando ahora</div>
+      <div class="demo-stagebar" aria-hidden="true">
+        <span class="demo-step active" id="demoStep1">1 · Crear orden</span>
+        <span class="demo-arrow">→</span>
+        <span class="demo-step" id="demoStep2">2 · Técnico por WhatsApp</span>
+        <span class="demo-arrow">→</span>
+        <span class="demo-step" id="demoStep3">3 · Firma del cliente</span>
+      </div>
+
+      <div class="demo-canvas" id="demoCanvas">
+        <div class="app-window" id="demoAppWindow">
+          <div class="browser-bar">
+            <div class="browser-dots"><i></i><i></i><i></i></div>
+            <div class="browser-address"><span class="browser-lock">●</span>&nbsp; app.opertrack.com / órdenes</div>
+          </div>
+          <div class="app-screen">
+            <div class="order-card">
+              <div class="order-head">
+                <div><div class="order-title">Nueva orden</div><div class="order-sub">El número se genera automáticamente</div></div>
+                <div class="order-x">×</div>
+              </div>
+              <div class="order-tabs">
+                <span class="order-tab">Proyecto</span>
+                <span class="order-tab selected" id="fieldType">Instalación</span>
+                <span class="order-tab">Levantamiento</span>
+                <span class="order-tab">Incidencia</span>
+              </div>
+              <div class="demo-grid">
+                <div class="demo-field span-2" id="fieldClient">
+                  <span class="demo-label">Cliente *</span>
+                  <div class="field-box has-chevron placeholder"><span class="field-value">Seleccionar cliente</span></div>
+                  <div class="site-note">● frente a PM Auto Tuning · Santo Domingo</div>
+                </div>
+                <div class="demo-field span-2" id="fieldDescription">
+                  <span class="demo-label">Descripción *</span>
+                  <div class="field-box multiline placeholder"><span class="field-value">Describe el trabajo a realizar...</span></div>
+                </div>
+                <div class="demo-field" id="fieldDate">
+                  <span class="demo-label">Fecha prevista</span>
+                  <div class="field-box placeholder"><span class="field-value">dd/mm/aaaa</span></div>
+                </div>
+                <div class="demo-field" id="fieldTime">
+                  <span class="demo-label">Hora</span>
+                  <div class="field-box placeholder"><span class="field-value">--:-- ----</span></div>
+                </div>
+                <div class="demo-field span-2" id="fieldTech">
+                  <span class="demo-label">Asignar técnico</span>
+                  <div class="field-box has-chevron placeholder"><span class="field-value">Pendiente de asignar (cola de despacho)</span></div>
+                </div>
+              </div>
+              <div class="status-row">
+                <span class="status-pill">Abierta</span>
+                <button class="create-order-btn" id="createOrderBtn" type="button" tabindex="-1">Crear orden</button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="mockup-stat">
-          <div class="mockup-stat-val" style="color:#fbbf24">2</div>
-          <div class="mockup-stat-label">En pausa</div>
+
+        <div class="order-success" id="orderSuccess" aria-hidden="true">
+          <div class="success-check">✓</div>
+          <div class="success-title">Orden creada y asignada</div>
+          <div class="success-sub">Notificando a Pedro López por WhatsApp…</div>
         </div>
-        <div class="mockup-stat">
-          <div class="mockup-stat-val">14</div>
-          <div class="mockup-stat-label">Órdenes hoy</div>
+
+        <div class="phone-shell" id="demoPhone" aria-hidden="true">
+          <div class="phone-screen">
+            <div class="wa-view" id="waView">
+              <div class="wa-head">
+                <div class="wa-avatar">CO</div>
+                <div><div class="wa-name">Chatbot Opertrack</div><div class="wa-online">WhatsApp</div></div>
+                <div class="wa-phase" id="waPhase">Asignación</div>
+                <div class="wa-menu">⋮</div>
+              </div>
+              <div class="wa-chat" id="waChat">
+                <div class="wa-chip">Hoy</div>
+
+                <div class="wa-message in long" id="waAssignment">
+                  <strong>📋 Nueva asignación</strong><br><br>
+                  Hola Pedro, Grullon Ortiz Philia te asignó una orden de trabajo:<br><br>
+                  🔧 Orden: <strong>PRO-2026-0005</strong><br>
+                  📅 Fecha: 2026-09-07<br>
+                  🕐 Hora: 9:00 p. m.<br><br>
+                  Responde <strong>INICIO</strong> para ver los detalles.
+                  <span class="wa-time">2:19 p. m.</span>
+                </div>
+
+                <div class="wa-message out" id="waInicio">inicio <span class="wa-time">2:19 p. m. ✓✓</span></div>
+
+                <div class="wa-message in long" id="waOrders">
+                  <strong>👋 Pedro Lopez</strong><br>
+                  🕐 02:19 PM<br><span class="wa-sep">─────────────────</span><br><br>
+                  📌 <strong>Órdenes (1):</strong><br><br>
+                  <strong>1 — PRO-2026-0005</strong><br>
+                  &nbsp;&nbsp;🏢 GO Refrigeración<br>
+                  &nbsp;&nbsp;📝 Instalación Aire 12BTU<br>
+                  &nbsp;&nbsp;🧰 Proyecto · 🟡 Media<br>
+                  &nbsp;&nbsp;📅 07/09/2026 · 🕐 9:00 PM<br><br>
+                  Comandos: responde con el número para iniciar.
+                  <span class="wa-time">2:19 p. m.</span>
+                </div>
+
+                <div class="wa-message out" id="waStartOne">1 <span class="wa-time">2:20 p. m. ✓✓</span></div>
+
+                <div class="wa-message in metric" id="waCheckin">
+                  <strong>✅ Check-in registrado</strong><br>
+                  🕐 2:20 PM · Líder ⭐<br><br>
+                  📋 PRO-2026-0005<br>
+                  🏢 GO Refrigeración<br><br>
+                  ¡Adelante Pedro! 💪<br>
+                  <small>PAUSA · TRASLADO · FIN · INICIO</small>
+                  <span class="wa-time">2:20 p. m.</span>
+                </div>
+
+                <div class="wa-message out" id="waFin">fin <span class="wa-time">2:20 p. m. ✓✓</span></div>
+
+                <div class="wa-message in long metric" id="waClose">
+                  <strong>🔔 Cerrar actividad</strong><br>
+                  <span class="wa-sep">─────────────────</span><br>
+                  📋 PRO-2026-0005<br>
+                  🏢 GO Refrigeración<br>
+                  ⏱️ Tiempo: <span class="wa-hours">4 Horas</span><br>
+                  👤 Rol: Líder ⭐<br>
+                  <span class="wa-sep">─────────────────</span><br><br>
+                  <strong>1 — Fin definitivo ✅</strong><br>&nbsp;&nbsp;&nbsp;Orden completada<br><br>
+                  2 — Fin del día 🌙<br>&nbsp;&nbsp;&nbsp;Regreso otro día<br><br>
+                  3 — Pausa temporal ⏸️<br>&nbsp;&nbsp;&nbsp;Regreso hoy más tarde
+                  <span class="wa-time">2:20 p. m.</span>
+                </div>
+
+                <div class="wa-message out" id="waCloseOne">1 <span class="wa-time">2:20 p. m. ✓✓</span></div>
+
+                <div class="wa-message in note" id="waBeforeNote">
+                  <strong>📝 Antes de continuar</strong><br><br>
+                  Cuéntame cómo quedó la actividad, alguna novedad con el cliente, el equipo, o algo importante que debamos saber.
+                  <span class="wa-time">2:20 p. m.</span>
+                </div>
+
+                <div class="wa-message out note" id="waNote">La instalación se ejecutó sin eventualidad.<span class="wa-time">2:25 p. m. ✓✓</span></div>
+
+                <div class="wa-message in note" id="waNoteSaved">
+                  <strong>✅ Nota registrada</strong><br><br>
+                  ¿Hay algo más que agregar?<br><br>
+                  <strong>SI</strong> — Agregar otra nota<br>
+                  <strong>NO</strong> — Finalizar
+                  <span class="wa-time">2:25 p. m.</span>
+                </div>
+
+                <div class="wa-message out" id="waNo">No <span class="wa-time">2:25 p. m. ✓✓</span></div>
+
+                <div class="wa-message in long metric" id="waClosed">
+                  <strong>✅ Orden cerrada</strong><br><br>
+                  📋 PRO-2026-0005<br>
+                  ⏱️ Total: <span class="wa-hours">4 Horas</span><br><br>
+                  ¡Excelente Pedro! 🎉<br><br>
+                  📸 <strong>Evidencia del trabajo</strong><br>
+                  Envía 1 a 5 fotos del trabajo terminado y te comparto el enlace para la firma del cliente.<br><br>
+                  📋 1 nota registrada.
+                  <span class="wa-time">2:25 p. m.</span>
+                </div>
+
+                <div class="wa-message in signature-msg long" id="waSignature">
+                  <strong>✅ Foto 1/5 guardada</strong> en PRO-2026-0005.<br><br>
+                  <strong>🖊️ Firma del cliente</strong><br>
+                  Pásale tu teléfono al cliente para que firme aquí:
+                  <span class="wa-link-text">app.opertrack.com/?firma=••••••••</span>
+                  <button class="wa-sign-link" id="waSignLink" type="button" tabindex="-1">Abrir enlace seguro de firma →</button>
+                  <span class="wa-time">2:25 p. m.</span>
+                </div>
+              </div>
+              <div class="wa-input">☺ &nbsp; Escribe un mensaje <span class="wa-send">➤</span></div>
+            </div>
+
+            <div class="sign-view" id="signView" aria-hidden="true">
+              <div class="sign-browser-bar">
+                <span class="sign-browser-back">‹</span>
+                <div class="sign-browser-address">● &nbsp; firma.opertrack.com</div>
+                <span class="sign-browser-menu">⋮</span>
+              </div>
+              <div class="sign-page">
+                <div class="sign-brand">OPERTRACK</div>
+                <div class="sign-form" id="signForm">
+                  <div class="sign-kicker">PRO-2026-0005</div>
+                  <div class="sign-title">Firma del servicio</div>
+                  <div class="sign-sub">GO Refrigeración · Instalación Aire 12BTU</div>
+                  <div class="sign-detail-row"><span>Fecha</span><strong>07/09/2026</strong></div>
+                  <div class="sign-detail-row"><span>Técnico</span><strong>Pedro López</strong></div>
+                  <label class="sign-label">Nombre del cliente</label>
+                  <div class="sign-name-box">Manuel</div>
+                  <label class="sign-label">Firma del cliente</label>
+                  <div class="signature-pad" id="signaturePad">
+                    <span class="signature-hint">Firma aquí</span>
+                    <svg viewBox="0 0 240 78" aria-hidden="true">
+                      <path class="signature-stroke" d="M18 55 C27 25 36 69 47 44 C56 24 59 65 70 48 C80 31 83 57 95 50 C108 42 112 34 116 51 C120 66 129 28 136 43 C143 58 148 58 155 42 C164 23 170 62 178 49 C185 39 188 43 197 51 C207 59 214 44 224 46"/>
+                    </svg>
+                  </div>
+                  <button class="sign-confirm-btn" id="confirmSignBtn" type="button" tabindex="-1">Confirmar firma</button>
+                </div>
+                <div class="sign-success" id="signSuccess">
+                  <div class="sign-success-icon">✓</div>
+                  <div class="sign-success-title">Firma registrada</div>
+                  <div class="sign-success-sub">La orden PRO-2026-0005 quedó completada.</div>
+                  <div class="sign-success-pill">Servicio finalizado</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="demo-cursor" id="demoCursor" aria-hidden="true">
+          <svg viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg"><path d="M2 1.8v22.5l5.5-5.2 3.9 8.6 4-1.9-4-8.4h7.5L2 1.8Z" fill="#fff" stroke="#0c1b28" stroke-width="1.4" stroke-linejoin="round"/></svg>
         </div>
       </div>
-      <div class="mockup-list">
-        <div class="mockup-row">
-          <div class="mockup-avatar">JG</div>
-          <div class="mockup-row-info">
-            <div class="mockup-row-name">Juan Gomez</div>
-            <div class="mockup-row-sub">OT-2024-001 · Fibra óptica</div>
-          </div>
-          <div class="mockup-badge badge-green">TRABAJANDO</div>
-        </div>
-        <div class="mockup-row">
-          <div class="mockup-avatar" style="background:#6366F1">PM</div>
-          <div class="mockup-row-info">
-            <div class="mockup-row-name">Pedro Martínez</div>
-            <div class="mockup-row-sub">OT-2024-002 · Instalación</div>
-          </div>
-          <div class="mockup-badge badge-yellow">EN PAUSA</div>
-        </div>
-        <div class="mockup-row">
-          <div class="mockup-avatar" style="background:#10B981">RD</div>
-          <div class="mockup-row-info">
-            <div class="mockup-row-name">Roberto Díaz</div>
-            <div class="mockup-row-sub">OT-2024-003 · Mantenimiento</div>
-          </div>
-          <div class="mockup-badge badge-blue">DISPONIBLE</div>
-        </div>
-      </div>
+      <div class="demo-footer"><span class="demo-live-dot"></span>Demo interactivo · Orden → Ejecución → Evidencia → Firma</div>
     </div>
   </div>
 </section>
@@ -731,8 +1093,228 @@
   window.addEventListener('scroll', () => {
     document.getElementById('mobileMenu').classList.remove('open');
   });
+
+  // Demo web nativo del flujo completo: Portal → WhatsApp → Firma del cliente.
+  (function initHeroWebDemo(){
+    const root = document.getElementById('heroWebDemo');
+    const canvas = document.getElementById('demoCanvas');
+    const cursor = document.getElementById('demoCursor');
+    const step1 = document.getElementById('demoStep1');
+    const step2 = document.getElementById('demoStep2');
+    const step3 = document.getElementById('demoStep3');
+    if (!root || !canvas || !cursor) return;
+
+    const els = {
+      type: document.getElementById('fieldType'),
+      client: document.getElementById('fieldClient'),
+      description: document.getElementById('fieldDescription'),
+      date: document.getElementById('fieldDate'),
+      time: document.getElementById('fieldTime'),
+      tech: document.getElementById('fieldTech'),
+      button: document.getElementById('createOrderBtn'),
+      success: document.getElementById('orderSuccess'),
+      waChat: document.getElementById('waChat'),
+      waPhase: document.getElementById('waPhase'),
+      assignment: document.getElementById('waAssignment'),
+      inicio: document.getElementById('waInicio'),
+      orders: document.getElementById('waOrders'),
+      startOne: document.getElementById('waStartOne'),
+      checkin: document.getElementById('waCheckin'),
+      fin: document.getElementById('waFin'),
+      close: document.getElementById('waClose'),
+      closeOne: document.getElementById('waCloseOne'),
+      beforeNote: document.getElementById('waBeforeNote'),
+      note: document.getElementById('waNote'),
+      noteSaved: document.getElementById('waNoteSaved'),
+      no: document.getElementById('waNo'),
+      closed: document.getElementById('waClosed'),
+      signatureMsg: document.getElementById('waSignature'),
+      signLink: document.getElementById('waSignLink'),
+      signView: document.getElementById('signView'),
+      signaturePad: document.getElementById('signaturePad'),
+      confirmSign: document.getElementById('confirmSignBtn')
+    };
+
+    const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+    const valueOf = el => el?.querySelector('.field-value');
+    const messages = [els.assignment,els.inicio,els.orders,els.startOne,els.checkin,els.fin,els.close,els.closeOne,els.beforeNote,els.note,els.noteSaved,els.no,els.closed,els.signatureMsg].filter(Boolean);
+
+    function setStage(stage){
+      [step1,step2,step3].forEach((el,i)=>el?.classList.toggle('active', i === stage-1));
+    }
+    function setField(el, value, completed=true){
+      const box = el?.querySelector('.field-box');
+      const valueEl = valueOf(el);
+      if (valueEl) valueEl.textContent = value;
+      if (box) box.classList.toggle('placeholder', !completed);
+      el?.classList.toggle('completed', completed);
+    }
+    function focusField(el){
+      document.querySelectorAll('.demo-field.focused').forEach(x => x.classList.remove('focused'));
+      if (el) el.classList.add('focused');
+    }
+    function pointTo(el, xRatio=.72, yRatio=.58){
+      if (!el) return;
+      const c = canvas.getBoundingClientRect();
+      const r = el.getBoundingClientRect();
+      cursor.style.left = Math.max(4, r.left - c.left + r.width*xRatio) + 'px';
+      cursor.style.top = Math.max(4, r.top - c.top + r.height*yRatio) + 'px';
+    }
+    async function clickAt(el, xRatio=.70, yRatio=.55){
+      pointTo(el,xRatio,yRatio);
+      await wait(420);
+      cursor.classList.add('clicking');
+      if (el === els.button || el === els.signLink || el === els.confirmSign) el.classList.add('demo-pressed');
+      await wait(210);
+      cursor.classList.remove('clicking');
+      if (el === els.button || el === els.signLink || el === els.confirmSign) el.classList.remove('demo-pressed');
+    }
+    async function typeInto(el, text){
+      const valueEl = valueOf(el); const box = el?.querySelector('.field-box');
+      if (!valueEl || !box) return;
+      valueEl.textContent=''; box.classList.remove('placeholder');
+      for (const ch of text){ valueEl.textContent += ch; await wait(34); }
+      el.classList.add('completed');
+    }
+    function setWaPhase(label){
+      if (els.waPhase) els.waPhase.textContent = label;
+    }
+    async function showMessage(el, delay=0, phase=''){
+      if (delay) await wait(delay);
+      messages.forEach(x => x.classList.remove('phase-focus'));
+      if (phase) setWaPhase(phase);
+      el?.classList.add('visible','phase-focus');
+      await wait(70);
+      if (els.waChat) {
+        els.waChat.scrollTo({ top: els.waChat.scrollHeight, behavior: 'smooth' });
+      }
+    }
+    function reset(){
+      root.classList.remove('phone-mode','signature-mode','cursor-mode');
+      setStage(1);
+      els.success?.classList.remove('show');
+      messages.forEach(x=>x.classList.remove('visible','phase-focus'));
+      setWaPhase('Asignación');
+      if (els.waChat) els.waChat.scrollTop = 0;
+      els.signaturePad?.classList.remove('active','signed');
+      els.signView?.classList.remove('complete');
+      setField(els.client,'Seleccionar cliente',false);
+      setField(els.description,'Describe el trabajo a realizar...',false);
+      setField(els.date,'dd/mm/aaaa',false);
+      setField(els.time,'--:-- ----',false);
+      setField(els.tech,'Pendiente de asignar (cola de despacho)',false);
+      focusField(null);
+      cursor.style.opacity='1';
+      cursor.style.display='block';
+      pointTo(els.type,.7,.6);
+    }
+
+    async function run(){
+      reset();
+      await wait(650);
+      await clickAt(els.type);
+
+      focusField(els.client); pointTo(els.client,.76,.62); await wait(360);
+      setField(els.client,'GO Refrigeración (Empresa)',true); await wait(520);
+
+      focusField(els.description); pointTo(els.description,.58,.58); await wait(300);
+      await typeInto(els.description,'Instalación Aire 12BTU'); await wait(430);
+
+      focusField(els.date); pointTo(els.date,.72,.62); await wait(280);
+      setField(els.date,'07/09/2026',true); await wait(340);
+      focusField(els.time); pointTo(els.time,.70,.62); await wait(260);
+      setField(els.time,'09:00 p. m.',true); await wait(430);
+
+      focusField(els.tech); pointTo(els.tech,.75,.62); await wait(300);
+      setField(els.tech,'Pedro López',true); await wait(520);
+      focusField(null);
+
+      await clickAt(els.button);
+      els.success?.classList.add('show'); await wait(850);
+      els.success?.classList.remove('show');
+
+      root.classList.add('phone-mode'); setStage(2);
+
+      // WhatsApp reproduce cada fase del trabajo tal como la vive el técnico.
+      await showMessage(els.assignment,650,'Asignación');
+      await wait(1200);
+      await showMessage(els.inicio,420,'Asignación');
+      await wait(420);
+
+      await showMessage(els.orders,420,'Órdenes');
+      await wait(1350);
+      await showMessage(els.startOne,420,'Iniciar orden');
+      await wait(420);
+
+      await showMessage(els.checkin,420,'Check-in');
+      await wait(1100);
+      await showMessage(els.fin,550,'Cerrar actividad');
+      await wait(380);
+
+      await showMessage(els.close,420,'Cierre · 4 horas');
+      await wait(1500);
+      await showMessage(els.closeOne,420,'Fin definitivo');
+      await wait(420);
+
+      await showMessage(els.beforeNote,420,'Nota de cierre');
+      await wait(1200);
+      await showMessage(els.note,420,'Nota de cierre');
+      await wait(850);
+      await showMessage(els.noteSaved,420,'Nota registrada');
+      await wait(1100);
+      await showMessage(els.no,420,'Finalizar');
+      await wait(420);
+
+      await showMessage(els.closed,420,'Evidencia');
+      await wait(1550);
+      await showMessage(els.signatureMsg,520,'Firma del cliente');
+      await wait(1350);
+
+      // El técnico entrega el teléfono al cliente y abre el enlace de firma.
+      if (els.waChat) els.waChat.scrollTop = els.waChat.scrollHeight;
+      root.classList.add('cursor-mode');
+      await clickAt(els.signLink,.74,.55);
+      root.classList.add('signature-mode');
+      setStage(3);
+      await wait(650);
+
+      // El cliente firma directamente en la página web abierta desde el enlace.
+      pointTo(els.signaturePad,.42,.54); await wait(430);
+      els.signaturePad?.classList.add('active');
+      cursor.classList.add('clicking'); await wait(180); cursor.classList.remove('clicking');
+      els.signaturePad?.classList.add('signed');
+      await wait(1200);
+      els.signaturePad?.classList.remove('active');
+
+      await clickAt(els.confirmSign,.70,.55);
+      els.signView?.classList.add('complete');
+      root.classList.remove('cursor-mode');
+      await wait(2300);
+    }
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      setField(els.client,'GO Refrigeración (Empresa)',true);
+      setField(els.description,'Instalación Aire 12BTU',true);
+      setField(els.date,'07/09/2026',true); setField(els.time,'09:00 p. m.',true); setField(els.tech,'Pedro López',true);
+      root.classList.add('phone-mode','signature-mode'); setStage(3); setWaPhase('Firma del cliente');
+      messages.forEach(x=>x.classList.add('visible'));
+      els.signaturePad?.classList.add('signed');
+      els.signView?.classList.add('complete');
+      cursor.style.display='none';
+      return;
+    }
+
+    let active = true;
+    const observer = new IntersectionObserver(entries => { active = entries[0]?.isIntersecting ?? true; }, {threshold:.15});
+    observer.observe(root);
+    (async function loop(){
+      while(true){
+        if (active && document.visibilityState === 'visible') await run();
+        else await wait(800);
+      }
+    })();
+  })();
 </script>
 
 </body>
-</html>
 </html>
