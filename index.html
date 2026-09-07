@@ -244,214 +244,6 @@
   .btn-hero-ghost:hover { border-color: white; background: rgba(255,255,255,0.08); }
   .hero-note { margin-top: 16px; font-size: 13px; color: rgba(255,255,255,0.5); }
 
-  /* Hero demo web nativo: Portal Opertrack → WhatsApp del técnico → Firma del cliente */
-  .hero-visual {
-    background: rgba(255,255,255,0.065);
-    border: 1px solid rgba(255,255,255,0.13);
-    border-radius: 20px;
-    padding: 14px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 28px 80px rgba(0,0,0,.26);
-  }
-  .demo-topbar { display:flex; align-items:center; gap:6px; padding:2px 4px 10px; }
-  .mockup-dot { width:10px; height:10px; border-radius:50%; flex-shrink:0; }
-  .mockup-title { font-size:11px; font-weight:700; color:rgba(255,255,255,.58); margin-left:8px; letter-spacing:.65px; }
-  .demo-stagebar { display:flex; align-items:center; gap:8px; margin:0 2px 10px; overflow:hidden; }
-  .demo-step {
-    display:inline-flex; align-items:center; justify-content:center;
-    min-width:0; padding:7px 10px; border-radius:999px;
-    border:1px solid rgba(255,255,255,.12); background:rgba(255,255,255,.055);
-    color:rgba(255,255,255,.48); font-size:10px; line-height:1; font-weight:700;
-    white-space:nowrap; transition:all .35s ease;
-  }
-  .demo-step.active { color:white; background:rgba(55,138,221,.28); border-color:rgba(105,174,240,.62); box-shadow:0 0 0 1px rgba(55,138,221,.08) inset; }
-  .demo-arrow { color:rgba(255,255,255,.28); font-size:13px; }
-
-  .demo-canvas {
-    position:relative; overflow:hidden; border-radius:14px;
-    aspect-ratio: 4 / 3; min-height:360px;
-    background:
-      radial-gradient(circle at 85% 15%, rgba(55,138,221,.20), transparent 34%),
-      linear-gradient(145deg,#061c31 0%,#082d50 50%,#071b2d 100%);
-    border:1px solid rgba(255,255,255,.10); isolation:isolate;
-  }
-  .demo-canvas::before {
-    content:''; position:absolute; inset:0; pointer-events:none; z-index:0;
-    background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
-    background-size:24px 24px; mask-image:linear-gradient(to bottom,rgba(0,0,0,.75),transparent 88%);
-  }
-
-  .app-window {
-    position:absolute; z-index:2; inset:16px 14px 16px 14px;
-    background:#f7f9fc; border:1px solid rgba(255,255,255,.65); border-radius:13px;
-    overflow:hidden; box-shadow:0 24px 55px rgba(0,0,0,.32);
-    transform-origin:left center; transition:transform .75s cubic-bezier(.22,1,.36,1),opacity .55s ease,filter .55s ease;
-  }
-  .browser-bar { height:35px; display:flex; align-items:center; gap:7px; padding:0 10px; background:#fff; border-bottom:1px solid #e7edf4; }
-  .browser-dots { display:flex; gap:5px; flex-shrink:0; }
-  .browser-dots i { display:block; width:7px; height:7px; border-radius:50%; background:#d9e1ea; }
-  .browser-address { flex:1; height:20px; border-radius:7px; background:#f3f6f9; color:#8394a7; font-size:8px; display:flex; align-items:center; justify-content:center; letter-spacing:.1px; }
-  .browser-lock { font-size:8px; color:#7890a7; }
-
-  .app-screen { height:calc(100% - 35px); background:#eef3f8; padding:11px; }
-  .order-card { height:100%; background:#fff; border:1px solid #dce5ee; border-radius:10px; padding:12px; box-shadow:0 3px 10px rgba(18,56,89,.06); overflow:hidden; }
-  .order-head { display:flex; align-items:flex-start; justify-content:space-between; margin-bottom:9px; }
-  .order-title { color:#17324c; font-weight:800; font-size:12px; line-height:1.15; }
-  .order-sub { color:#8b9cad; font-size:7px; margin-top:3px; }
-  .order-x { color:#92a2b2; font-size:12px; line-height:1; }
-  .order-tabs { display:flex; gap:5px; margin-bottom:9px; }
-  .order-tab { font-size:7px; color:#6d8092; padding:4px 7px; border:1px solid #e0e7ee; border-radius:999px; background:#fafbfd; }
-  .order-tab.selected { color:#6f42c1; border-color:#b99adf; background:#f6f0fb; font-weight:700; }
-  .demo-grid { display:grid; grid-template-columns:1fr 1fr; gap:7px 8px; }
-  .demo-field { position:relative; min-width:0; }
-  .demo-field.span-2 { grid-column:1/-1; }
-  .demo-label { display:block; font-size:7px; color:#536b80; font-weight:700; margin:0 0 3px; }
-  .field-box {
-    min-height:27px; border:1px solid #d6e0e9; border-radius:6px; background:#fff;
-    display:flex; align-items:center; padding:0 8px; color:#345169; font-size:8px;
-    transition:border-color .28s ease,box-shadow .28s ease,background .28s ease,transform .28s ease;
-  }
-  .field-box.multiline { min-height:45px; align-items:flex-start; padding-top:7px; }
-  .field-box.placeholder { color:#a5b3c0; }
-  .field-box.has-chevron::after { content:'⌄'; margin-left:auto; color:#8ca0b2; font-size:10px; }
-  .demo-field.focused .field-box { border-color:#378ADD; box-shadow:0 0 0 3px rgba(55,138,221,.14); background:#fbfdff; transform:translateY(-1px); }
-  .demo-field.completed .field-box { border-color:#c3d4e4; color:#173b5b; }
-  .site-note { display:flex; align-items:center; gap:4px; margin-top:3px; color:#a06a25; font-size:6.5px; }
-  .status-row { display:flex; align-items:center; justify-content:space-between; margin-top:8px; }
-  .status-pill { font-size:7px; padding:4px 8px; border-radius:999px; background:#eaf8f1; color:#2d8c61; border:1px solid #bde7d2; font-weight:700; }
-  .create-order-btn {
-    border:0; border-radius:7px; padding:7px 12px; background:#185FA5; color:white;
-    font:700 8px 'Inter',sans-serif; box-shadow:0 5px 12px rgba(24,95,165,.23);
-    transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
-  }
-  .create-order-btn.demo-pressed { transform:scale(.95); background:#0C447C; box-shadow:0 2px 5px rgba(24,95,165,.18); }
-
-  .demo-cursor {
-    position:absolute; z-index:9; left:50%; top:50%; width:22px; height:27px;
-    transition:left .48s cubic-bezier(.22,1,.36,1),top .48s cubic-bezier(.22,1,.36,1),opacity .25s ease,transform .18s ease;
-    filter:drop-shadow(0 2px 3px rgba(0,0,0,.38)); pointer-events:none;
-  }
-  .demo-cursor svg { display:block; width:100%; height:100%; }
-  .demo-cursor::after {
-    content:''; position:absolute; width:9px; height:9px; border:2px solid rgba(55,138,221,.9); border-radius:50%;
-    left:1px; top:1px; opacity:0; transform:scale(.4);
-  }
-  .demo-cursor.clicking { transform:scale(.88); }
-  .demo-cursor.clicking::after { animation:demoClick .52s ease-out; }
-  @keyframes demoClick { 0%{opacity:.9;transform:scale(.4)} 100%{opacity:0;transform:scale(3.2)} }
-
-  .order-success {
-    position:absolute; z-index:8; left:50%; top:50%; transform:translate(-50%,-42%) scale(.9);
-    width:min(280px,72%); padding:15px 18px; border-radius:13px;
-    background:rgba(7,31,52,.93); border:1px solid rgba(255,255,255,.16); box-shadow:0 20px 48px rgba(0,0,0,.34);
-    color:#fff; opacity:0; pointer-events:none; transition:opacity .34s ease,transform .42s cubic-bezier(.22,1,.36,1); text-align:center;
-    backdrop-filter:blur(14px);
-  }
-  .order-success.show { opacity:1; transform:translate(-50%,-50%) scale(1); }
-  .success-check { width:30px; height:30px; margin:0 auto 7px; border-radius:50%; display:grid; place-items:center; background:#2eb67d; font-size:16px; font-weight:800; }
-  .success-title { font-size:12px; font-weight:800; }
-  .success-sub { color:#bfd0df; font-size:8px; margin-top:4px; }
-
-  .phone-shell {
-    position:absolute; z-index:6; top:18px; right:18px; width:50%; height:calc(100% - 36px);
-    border-radius:28px; padding:6px; background:linear-gradient(150deg,#323943,#0c1015 42%,#242a32);
-    box-shadow:0 28px 65px rgba(0,0,0,.48); opacity:0; transform:translateX(125%) scale(.90) rotate(1deg);
-    transition:transform .82s cubic-bezier(.16,1,.3,1),opacity .45s ease; pointer-events:none;
-  }
-  .phone-shell::before { content:''; position:absolute; width:30%; height:10px; border-radius:0 0 9px 9px; background:#0a0d11; left:35%; top:5px; z-index:3; }
-  .phone-screen { height:100%; border-radius:23px; overflow:hidden; background:#0b141a; color:#e9edef; display:flex; flex-direction:column; position:relative; }
-  .wa-head { height:43px; padding:9px 9px 7px; display:flex; align-items:center; gap:7px; background:#202c33; flex-shrink:0; }
-  .wa-avatar { width:23px; height:23px; border-radius:50%; display:grid; place-items:center; background:#593d90; color:white; font-size:7px; font-weight:800; }
-  .wa-name { font-size:8px; font-weight:700; }
-  .wa-online { font-size:6px; color:#93a4ad; margin-top:1px; }
-  .wa-phase { margin-left:auto; max-width:104px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; border:1px solid rgba(83,189,255,.22); background:rgba(0,168,132,.10); color:#9adfcf; border-radius:999px; padding:3px 6px; font-size:5.4px; font-weight:800; letter-spacing:.08px; transition:all .28s ease; }
-  .wa-menu { color:#aebac1; font-size:12px; }
-  .wa-chat { flex:1; padding:9px 8px 10px; display:flex; flex-direction:column; justify-content:flex-start; gap:6px; position:relative; overflow-y:auto; overflow-x:hidden; scroll-behavior:smooth; scrollbar-width:none; }
-  .wa-chat::-webkit-scrollbar { display:none; }
-  .wa-chat::before { content:''; position:absolute; inset:43px 0 42px; opacity:.08; pointer-events:none; background-image:radial-gradient(circle at 20% 20%,#fff 1px,transparent 1.5px); background-size:18px 18px; }
-  .wa-chip { align-self:center; position:relative; z-index:1; font-size:5.7px; padding:3px 7px; border-radius:6px; background:#182229; color:#8696a0; flex:0 0 auto; }
-  .wa-message { position:relative; z-index:1; max-width:96%; border-radius:7px; padding:7px 7px 6px; font-size:6.65px; line-height:1.43; box-shadow:0 1px 1px rgba(0,0,0,.18); display:none; flex:0 0 auto; }
-  .wa-message.in { align-self:flex-start; background:#202c33; border-top-left-radius:2px; }
-  .wa-message.out { align-self:flex-end; background:#005c4b; border-top-right-radius:2px; min-width:58px; }
-  .wa-message.visible { display:block; animation:waBubbleIn .42s cubic-bezier(.22,1,.36,1) both; }
-  .wa-message.phase-focus { box-shadow:0 0 0 1px rgba(83,189,255,.20),0 5px 16px rgba(0,0,0,.15); }
-  @keyframes waBubbleIn { from{opacity:0;transform:translateY(10px) scale(.985)} to{opacity:1;transform:translateY(0) scale(1)} }
-  .wa-message strong { font-weight:800; color:#fff; }
-  .wa-message .wa-time { display:block; text-align:right; color:#8fa1aa; font-size:5px; margin-top:3px; }
-  .wa-message.out .wa-time { color:#91c4b7; }
-  .wa-sep { opacity:.32; letter-spacing:.25px; }
-  .wa-message.long { font-size:6.05px; line-height:1.33; }
-  .wa-message.note { font-size:6.2px; line-height:1.36; }
-  .wa-message.metric strong { color:#b7f3df; }
-  .wa-hours { display:inline-flex; margin:3px 0 2px; padding:2px 5px; border-radius:999px; background:rgba(46,182,125,.16); border:1px solid rgba(46,182,125,.28); color:#a7efd2; font-weight:800; }
-  .wa-input { height:35px; margin:0 6px 7px; border-radius:18px; background:#202c33; display:flex; align-items:center; padding:0 9px; gap:6px; color:#8696a0; font-size:6.5px; flex-shrink:0; }
-  .wa-send { margin-left:auto; width:20px; height:20px; border-radius:50%; display:grid; place-items:center; background:#00a884; color:white; font-size:9px; }
-
-  .wa-view, .sign-view {
-    position:absolute; inset:0; display:flex; flex-direction:column;
-    transition:transform .72s cubic-bezier(.22,1,.36,1),opacity .42s ease;
-  }
-  .wa-view { transform:translateX(0); opacity:1; }
-  .sign-view { transform:translateX(108%); opacity:0; background:#f4f7fb; color:#17324c; }
-  .wa-message.compact { font-size:6.15px; line-height:1.34; }
-  .wa-message.signature-msg { padding-bottom:7px; }
-  .wa-sign-link {
-    display:block; width:100%; margin-top:7px; padding:7px 7px; border:1px solid rgba(83,189,255,.38);
-    border-radius:6px; background:rgba(0,92,75,.48); color:#8ed7ff; text-align:left;
-    font:700 6.3px 'Inter',sans-serif; cursor:default;
-  }
-  .wa-link-text { display:block; margin-top:5px; color:#53bdeb; font-size:5.8px; line-height:1.3; word-break:break-all; }
-  .wa-sign-link.demo-pressed { transform:scale(.97); background:rgba(0,122,100,.72); }
-
-  .sign-browser-bar { height:36px; background:#fff; border-bottom:1px solid #dfe7ef; display:flex; align-items:center; gap:6px; padding:0 8px; flex-shrink:0; }
-  .sign-browser-back,.sign-browser-menu { color:#72859a; font-size:14px; width:16px; text-align:center; }
-  .sign-browser-address { flex:1; height:21px; border-radius:7px; background:#f2f5f8; color:#71869a; display:flex; align-items:center; justify-content:center; font-size:6px; }
-  .sign-page { flex:1; overflow:hidden; padding:11px 10px 10px; position:relative; background:linear-gradient(180deg,#f9fbfd,#eef4f9); }
-  .sign-brand { font-size:8px; font-weight:900; letter-spacing:1.3px; color:#185FA5; margin-bottom:8px; }
-  .sign-form { transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1); }
-  .sign-kicker { display:inline-flex; padding:3px 6px; border-radius:999px; background:#e6f1fb; color:#185FA5; border:1px solid #c8dff0; font-size:5.7px; font-weight:800; }
-  .sign-title { font-size:12px; font-weight:900; color:#113453; margin-top:6px; }
-  .sign-sub { font-size:6px; color:#70869a; line-height:1.4; margin:3px 0 8px; }
-  .sign-detail-row { display:flex; justify-content:space-between; gap:8px; padding:5px 0; border-top:1px solid #e5edf4; font-size:6px; color:#768b9d; }
-  .sign-detail-row strong { color:#294b68; font-weight:800; }
-  .sign-label { display:block; color:#4b657b; font-size:6px; font-weight:800; margin:7px 0 3px; }
-  .sign-name-box { height:25px; border:1px solid #d3dfe9; border-radius:6px; background:#fff; display:flex; align-items:center; padding:0 7px; font-size:6.5px; color:#294b68; }
-  .signature-pad { height:72px; position:relative; border:1.5px dashed #a9c3d8; border-radius:8px; background:#fff; overflow:hidden; transition:border-color .25s ease,box-shadow .25s ease; }
-  .signature-pad.active { border-color:#378ADD; box-shadow:0 0 0 3px rgba(55,138,221,.12); }
-  .signature-pad svg { position:absolute; inset:7px 7px 3px; width:calc(100% - 14px); height:calc(100% - 10px); }
-  .signature-stroke { fill:none; stroke:#183b58; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; stroke-dasharray:430; stroke-dashoffset:430; }
-  .signature-pad.signed .signature-stroke { animation:drawSignature 1.05s ease forwards; }
-  .signature-hint { position:absolute; left:0; right:0; top:50%; transform:translateY(-50%); text-align:center; font-size:6px; color:#9badbb; transition:opacity .2s ease; }
-  .signature-pad.signed .signature-hint { opacity:0; }
-  @keyframes drawSignature { to { stroke-dashoffset:0; } }
-  .sign-confirm-btn { width:100%; border:0; border-radius:7px; margin-top:8px; padding:7px 8px; background:#185FA5; color:#fff; font:800 6.6px 'Inter',sans-serif; box-shadow:0 5px 12px rgba(24,95,165,.19); transition:transform .18s ease,background .18s ease; }
-  .sign-confirm-btn.demo-pressed { transform:scale(.97); background:#0C447C; }
-  .sign-success { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px; opacity:0; transform:scale(.92); pointer-events:none; transition:opacity .38s ease,transform .45s cubic-bezier(.22,1,.36,1); }
-  .sign-success-icon { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; background:#2eb67d; color:#fff; font-size:20px; font-weight:900; box-shadow:0 9px 24px rgba(46,182,125,.25); }
-  .sign-success-title { font-size:12px; font-weight:900; color:#153a59; margin-top:10px; }
-  .sign-success-sub { font-size:6.5px; color:#71879a; margin-top:4px; line-height:1.5; }
-  .sign-success-pill { margin-top:10px; padding:4px 8px; border-radius:999px; background:#e8f7f0; border:1px solid #bce6d0; color:#2b8c60; font-size:6px; font-weight:800; }
-  .sign-view.complete .sign-form { opacity:0; transform:translateY(-8px) scale(.97); }
-  .sign-view.complete .sign-success { opacity:1; transform:scale(1); }
-
-  .hero-web-demo.signature-mode .wa-view { transform:translateX(-108%); opacity:.12; }
-  .hero-web-demo.signature-mode .sign-view { transform:translateX(0); opacity:1; }
-  .hero-web-demo.signature-mode .app-window { transform:translateX(-33%) scale(.74); filter:saturate(.68) brightness(.80); opacity:.42; }
-  .hero-web-demo.signature-mode .phone-shell { transform:translateX(-3%) scale(1.035) rotate(0deg); }
-  .hero-web-demo.phone-mode.cursor-mode .demo-cursor { opacity:1; }
-
-  .hero-web-demo.phone-mode .app-window { transform:translateX(-31%) scale(.76); filter:saturate(.78) brightness(.88); opacity:.62; }
-  .hero-web-demo.phone-mode .phone-shell { opacity:1; transform:translateX(0) scale(1) rotate(0deg); }
-  .hero-web-demo.phone-mode .demo-cursor { opacity:0; }
-  .hero-web-demo.phone-mode.cursor-mode .demo-cursor { opacity:1; }
-
-  .demo-footer { display:flex; align-items:center; justify-content:center; gap:7px; padding:10px 4px 1px; color:rgba(255,255,255,.52); font-size:10px; font-weight:500; }
-  .demo-live-dot { width:6px; height:6px; border-radius:50%; background:#4ade80; box-shadow:0 0 0 4px rgba(74,222,128,.10); }
-
-  @media (prefers-reduced-motion: reduce) {
-    .app-window,.phone-shell,.demo-cursor,.wa-message,.order-success,.field-box,.wa-view,.sign-view,.sign-form,.sign-success { transition:none !important; animation:none !important; }
-  }
-
   /* ── SOCIAL PROOF ── */
   .social-proof { background: var(--gray); padding: 32px 5%; border-bottom: 1px solid var(--border); }
   .social-proof-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
@@ -557,11 +349,11 @@
 
   @media (max-width: 768px) {
     .hero-inner { grid-template-columns: 1fr; }
-    .hero-visual { display:block; width:100%; max-width:620px; margin:8px auto 0; padding:10px; }
-    .demo-canvas { min-height:350px; }
-    .phone-shell { width:52%; right:10px; }
-    .demo-stagebar { gap:5px; }
-    .demo-step { padding:6px 8px; font-size:9px; }
+
+
+
+
+
     .proof-divider { display: none; }
     .social-proof-inner { gap: 24px; }
     .hero { padding: 90px 5% 50px; }
@@ -579,14 +371,56 @@
   }
 
   @media (max-width: 480px) {
-    .demo-stagebar { gap:3px; }
-    .demo-arrow { font-size:10px; }
-    .demo-step { padding:5px 6px; font-size:7.6px; }
-    .phone-shell { width:57%; right:6px; }
+
+
+
+
     .steps { grid-template-columns: 1fr; }
     .hero h1 { font-size: 26px; }
     .social-proof-inner { flex-direction: column; gap: 16px; text-align: center; }
   }
+
+/* Opertrack · Hero horizontal. Todos los estilos del producto están aislados. */
+.hero{min-height:100vh;padding:112px clamp(22px,3.5vw,72px) 72px;background:linear-gradient(155deg,#042C53 0%,#0C447C 58%,#185FA5 100%);display:flex;align-items:center;position:relative;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.hero::before{width:680px;height:680px;right:-210px;top:-250px;background:rgba(55,138,221,.13)}
+.hero::after{width:500px;height:500px;left:-170px;bottom:-250px;background:rgba(255,255,255,.035)}
+.hero-inner{max-width:1560px;margin:0 auto;width:100%;display:grid;grid-template-columns:minmax(310px,.78fr) minmax(0,1.55fr);gap:clamp(32px,3.6vw,64px);align-items:center;position:relative;z-index:1}
+.hero-copy{min-width:0}.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(55,138,221,.2);border:1px solid rgba(55,138,221,.4);border-radius:20px;padding:7px 14px;font-size:12px;font-weight:600;color:#B5D4F4;margin-bottom:25px;line-height:1.5}.hero-badge span{width:6px;height:6px;border-radius:50%;background:#4ade80;flex-shrink:0}
+.hero-copy h1{font-size:clamp(35px,3.2vw,54px);font-weight:800;color:#fff;line-height:1.12;margin:0 0 24px;letter-spacing:-1.6px}.hero-copy h1 em{font-style:normal;color:#75baff}.hero-copy>p:not(.hero-note){font-size:clamp(15px,1.12vw,18px);color:rgba(255,255,255,.81);line-height:1.76;margin:0 0 32px;max-width:510px}.hero-ctas{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.btn-hero-primary{padding:14px 24px;background:#378ADD;border:0;border-radius:10px;font-size:15px;font-weight:700;color:#fff;text-decoration:none;transition:background .2s,transform .2s;box-shadow:0 8px 24px rgba(55,138,221,.26);white-space:nowrap}.btn-hero-primary:hover{background:#2970c0;transform:translateY(-2px)}.btn-hero-ghost{padding:13px 22px;border:1.5px solid rgba(255,255,255,.3);border-radius:10px;font-size:14px;font-weight:600;color:#fff;text-decoration:none;transition:background .2s,border-color .2s;white-space:nowrap}.btn-hero-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08)}.hero-copy>.hero-note{font-size:12px;color:rgba(255,255,255,.55);line-height:1.65;margin:18px 0 0;max-width:440px}
+.hero-visual.otd-root{min-width:0;width:100%;max-width:none;margin:0;padding:0;background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));border:1px solid rgba(255,255,255,.2);border-radius:20px;box-shadow:0 28px 85px rgba(0,10,30,.27);backdrop-filter:blur(12px);overflow:hidden;isolation:isolate}
+.otd-root{--otd-ink:#17324c;--otd-muted:#71869a;--otd-line:#dce6ef;--otd-accent:#378ADD;--otd-white:#fff;color:#fff;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:1.45}.otd-root *{box-sizing:border-box}.otd-root button{font-family:inherit;cursor:pointer}.otd-root button:focus-visible{outline:3px solid #75baff;outline-offset:3px}.otd-root p{margin:0;max-width:none}.otd-root h3{margin:0;letter-spacing:-.45px}.otd-sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.otd-topbar{min-height:55px;display:flex;align-items:center;gap:14px;padding:0 22px;background:rgba(2,25,48,.34);border-bottom:1px solid rgba(255,255,255,.1)}.otd-window-dots,.otd-browser-dots{display:flex;gap:6px;flex-shrink:0}.otd-window-dots i{width:10px;height:10px;border-radius:50%;background:#ef6a65}.otd-window-dots i:nth-child(2){background:#f3bc4d}.otd-window-dots i:nth-child(3){background:#49ce83}.otd-top-title{display:flex;align-items:baseline;gap:9px;min-width:0}.otd-top-title strong{font-size:14px;font-weight:800;letter-spacing:-.4px}.otd-top-title span{font-size:11px;color:#b3cee4}.otd-top-url{margin-left:auto;color:#94badb;font-size:11px;font-weight:600;letter-spacing:.1px;white-space:nowrap}
+.otd-navigation{display:flex;align-items:center;justify-content:center;gap:10px;padding:15px 18px 13px}.otd-tab{border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.055);color:#9fb9d0;border-radius:999px;padding:9px 14px;font-size:11px;font-weight:700;white-space:nowrap;transition:background .3s,color .3s,border-color .3s}.otd-tab.is-active{background:rgba(55,138,221,.25);border-color:rgba(117,186,255,.55);color:#fff}.otd-tab:hover{background:rgba(255,255,255,.12);color:#fff}.otd-tab-icon{font-size:13px;margin-right:6px}.otd-tab-arrow{color:#6d91b0;font-size:14px}
+.otd-stage{position:relative;margin:0 15px;aspect-ratio:1.55;min-height:465px;max-height:590px;background:radial-gradient(circle at 80% 12%,rgba(55,138,221,.23),transparent 38%),linear-gradient(145deg,#061e39,#0b355c 65%,#0a2848);border:1px solid rgba(255,255,255,.11);border-radius:14px;overflow:hidden}.otd-stage::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:26px 26px;mask-image:linear-gradient(to bottom,#000,transparent 85%);pointer-events:none}.otd-scene{position:absolute;inset:0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(8px);transition:opacity .42s ease,transform .48s ease,visibility 0s linear .48s}.otd-scene.is-visible{opacity:1;visibility:visible;pointer-events:auto;transform:none;transition:opacity .42s ease,transform .48s ease,visibility 0s}
+/* Formulario: medidas fluidas, sin escalar el contenedor ni recortar textos. */
+.otd-order-scene{padding:19px}.otd-browser{height:100%;max-width:100%;background:#f8fbfe;color:var(--otd-ink);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,.7);box-shadow:0 20px 50px rgba(0,0,0,.2);display:flex;flex-direction:column}.otd-browser-bar{height:35px;flex-shrink:0;display:flex;align-items:center;gap:12px;padding:0 13px;background:#fff;border-bottom:1px solid #e4ebf2}.otd-browser-dots i{width:7px;height:7px;border-radius:50%;background:#e4a3a0}.otd-browser-dots i:nth-child(2){background:#efcf8c}.otd-browser-dots i:nth-child(3){background:#98dbad}.otd-browser-address{background:#f3f6fa;border:1px solid #edf1f6;border-radius:6px;height:23px;flex:1;max-width:420px;display:flex;align-items:center;justify-content:center;gap:7px;color:#8196a9;font-size:10px}.otd-browser-menu{color:#9badbc;letter-spacing:2px;margin-left:auto}.otd-portal{flex:1;min-height:0;display:grid;grid-template-columns:48px minmax(0,1fr)}.otd-sidebar{background:#0b3d6b;padding:15px 6px;display:flex;align-items:center;flex-direction:column;gap:13px}.otd-side-logo{width:30px;height:30px;border-radius:9px;background:#378ADD;color:#fff;display:grid;place-items:center;font-weight:900;margin-bottom:9px}.otd-side-icon{width:29px;height:29px;border-radius:8px;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#9ebfdb;font-size:15px}.otd-side-icon.selected{background:rgba(55,138,221,.55);color:#fff}.otd-portal-content{position:relative;min-width:0;min-height:0;overflow:auto;scrollbar-width:thin;padding:20px clamp(16px,2.1vw,28px) 16px;display:flex;flex-direction:column;background:#fff}.otd-form-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}.otd-form-overline{font-size:9px;font-weight:800;letter-spacing:1px;color:#7690a6;margin-bottom:5px}.otd-form-head h3{font-size:22px;line-height:1.2;color:#123b60;font-weight:800}.otd-form-head p{font-size:10px!important;color:#8295a7!important;line-height:1.5!important;margin:3px 0 0!important}.otd-form-close{border:1px solid #e3ebf2;border-radius:6px;width:24px;height:24px;display:grid;place-items:center;color:#91a2b2;font-size:17px}.otd-order-types{display:flex;flex-wrap:wrap;gap:6px;margin:15px 0 17px}.otd-order-types span{padding:6px 10px;font-size:10px;border:1px solid #e1e8f0;border-radius:999px;color:#6d8193;background:#fff;white-space:nowrap}.otd-order-types .selected{color:#7544b3;background:#f7f2fc;border-color:#c9a7e7;font-weight:800}.otd-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:13px 14px}.otd-full{grid-column:1/-1}.otd-field{min-width:0}.otd-field-label{display:block;font-size:10px;font-weight:700;color:#506b82;margin-bottom:6px}.otd-field-label b{color:#df5d72}.otd-input{min-height:37px;border:1px solid #d5e0eb;border-radius:7px;display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 11px;color:#344e66;font-size:12px;line-height:1.35;background:#fff;transition:border-color .22s,box-shadow .22s}.otd-input>span:first-child{min-width:0;overflow-wrap:anywhere}.otd-input>span:last-child:not(:first-child){color:#90a5b5;flex-shrink:0}.otd-input.otd-textarea{min-height:59px;align-items:flex-start}.otd-field.is-focused .otd-input{border-color:#378ADD;box-shadow:0 0 0 3px rgba(55,138,221,.14)}.otd-field.is-placeholder .otd-input>span:first-child{color:#a0b0be}.otd-chevron{font-size:15px}.otd-client-info{display:none;font-size:9px;color:#9b6b36;margin:5px 0 0;line-height:1.4}.otd-client-info.is-visible{display:block}.otd-section-label{font-size:9px;font-weight:800;letter-spacing:.7px;color:#8094a6;margin-top:3px}.otd-form-actions{display:flex;justify-content:flex-end;align-items:center;gap:16px;padding-top:15px;margin-top:auto}.otd-draft{color:#8798a9;font-size:11px}.otd-create{border:0;background:#185FA5;color:#fff;padding:10px 17px;font-size:12px;font-weight:800;border-radius:7px;box-shadow:0 5px 12px rgba(24,95,165,.18);transition:transform .2s,background .2s}.otd-create:hover{background:#0C447C}.otd-create.is-pressed{transform:scale(.96);background:#0C447C}.otd-toast{position:absolute;right:18px;bottom:19px;max-width:calc(100% - 36px);display:flex;align-items:center;gap:10px;padding:13px 16px;background:#ecfdf3;border:1px solid #b8efca;border-radius:10px;color:#17683d;box-shadow:0 15px 40px rgba(12,64,40,.16);opacity:0;visibility:hidden;transform:translateY(10px);transition:.3s}.otd-toast.is-visible{opacity:1;visibility:visible;transform:none}.otd-toast>span{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:#d5f5e1;font-weight:900}.otd-toast strong{display:block;font-size:12px}.otd-toast small{display:block;font-size:10px;margin-top:3px}.otd-cursor{position:absolute;left:50%;top:40%;width:24px;height:31px;z-index:10;opacity:0;pointer-events:none;filter:drop-shadow(0 3px 3px rgba(0,0,0,.22));transition:left .44s cubic-bezier(.2,.8,.2,1),top .44s cubic-bezier(.2,.8,.2,1),transform .15s,opacity .2s}.otd-cursor.is-visible{opacity:1}.otd-cursor.is-clicking{transform:scale(.77)}.otd-cursor svg{width:100%;height:100%}
+/* WhatsApp horizontal: teléfono realista y texto explicativo a tamaño legible. */
+.otd-chat-layout,.otd-sign-layout{height:100%;display:grid;grid-template-columns:minmax(270px,.95fr) minmax(0,1fr);align-items:center;gap:clamp(16px,3vw,40px);padding:18px clamp(18px,3.6vw,46px)}.otd-phone{position:relative;justify-self:center;width:min(100%,325px);height:100%;max-height:535px;min-height:0;border:7px solid #142232;border-radius:31px;background:#0b141a;box-shadow:0 20px 55px rgba(0,0,0,.38);display:flex;flex-direction:column;overflow:hidden}.otd-phone-top{height:13px;flex-shrink:0;display:flex;justify-content:center;align-items:flex-start;background:#142232}.otd-phone-top span{width:75px;height:6px;border-radius:0 0 8px 8px;background:#060d14}.otd-wa-header{height:50px;flex-shrink:0;display:flex;align-items:center;gap:9px;padding:0 11px;background:#202c33;color:#fff}.otd-wa-back{font-size:26px;color:#9aabb4;line-height:1}.otd-wa-avatar{width:31px;height:31px;border-radius:50%;display:grid;place-items:center;background:#378ADD;font-weight:900;font-size:14px}.otd-wa-contact{min-width:0;display:flex;flex-direction:column;gap:1px}.otd-wa-contact strong{font-size:12px;white-space:nowrap}.otd-wa-contact small{font-size:9px;color:#a9b8c1}.otd-wa-menu{font-size:22px;margin-left:auto;color:#a9b8c1}.otd-chat-messages{min-height:0;flex:1;overflow-y:auto;scrollbar-width:thin;scrollbar-color:#45545e transparent;padding:12px 10px 16px;overscroll-behavior:contain;background:#0b141a}.otd-message{max-width:92%;width:max-content;min-width:0;white-space:normal;overflow-wrap:anywhere;background:#202c33;border-radius:9px 9px 9px 3px;padding:10px 11px;margin:0 0 9px;color:#e9edef;font-size:11.5px;line-height:1.48;box-shadow:0 1px 2px rgba(0,0,0,.12);animation:otdMessageIn .35s ease both}.otd-message.is-me{margin-left:auto;background:#005c4b;border-radius:9px 9px 3px 9px;color:#e7f7f0}.otd-message strong{font-weight:800}.otd-message .otd-msg-title{display:block;font-size:11.7px;margin-bottom:6px;color:#fff}.otd-message .otd-msg-line{display:block;margin:2px 0}.otd-message .otd-msg-muted{color:#afbec7;font-size:10px}.otd-message .otd-msg-div{height:1px;background:rgba(255,255,255,.1);margin:7px 0}.otd-message .otd-msg-highlight{display:inline-block;background:rgba(37,211,102,.13);color:#b3f1d6;padding:3px 7px;border-radius:5px;font-weight:800;margin:3px 0}.otd-message .otd-msg-link{display:block;color:#72cbff;font-size:10.5px;margin-top:7px;overflow-wrap:anywhere}.otd-message .otd-msg-action{display:block;background:#005c4b;border:1px solid #167963;color:#e0fff2;border-radius:6px;padding:9px 10px;font-weight:800;font-size:11px;margin-top:10px;text-align:center}.otd-msg-photo{height:92px;border-radius:7px;background:linear-gradient(155deg,#e4eff7,#9eb7ca);margin:6px 0 8px;display:flex;align-items:center;justify-content:center;color:#285274;font-weight:800;text-align:center;font-size:11px}.otd-wa-input{height:43px;flex-shrink:0;display:flex;align-items:center;gap:9px;background:#202c33;color:#8fa0ac;margin:0 5px 6px;border-radius:22px;padding:0 12px;font-size:11px}.otd-wa-input span:first-child{font-size:20px}.otd-wa-input span:last-child{margin-left:auto;color:#53bb9e;font-size:17px}.otd-chat-explainer{min-width:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0}.otd-eyebrow{font-size:10px;letter-spacing:1.6px;color:#83bff7;font-weight:800}.otd-chat-explainer h3,.otd-sign-panel h3{font-size:clamp(22px,2.15vw,31px);line-height:1.17;letter-spacing:-.9px;color:#fff;font-weight:800;margin:13px 0}.otd-chat-explainer>p,.otd-sign-panel>p{color:#c4d9eb;font-size:13px;line-height:1.65;margin:0 0 20px}.otd-info-card,.otd-metric{display:flex;align-items:center;gap:12px;width:100%;border:1px solid rgba(255,255,255,.11);border-radius:11px;background:rgba(255,255,255,.055);padding:13px 14px;margin-bottom:10px}.otd-info-icon,.otd-metric-icon{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:rgba(55,138,221,.2);color:#8bc7ff;display:grid;place-items:center;font-size:19px}.otd-metric-icon{background:rgba(37,211,102,.12);color:#82ddb0}.otd-info-card small,.otd-metric small{display:block;font-size:9px;letter-spacing:.7px;color:#91aec8;font-weight:800;margin-bottom:4px}.otd-info-card strong,.otd-metric strong{display:block;color:#fff;font-size:13px;line-height:1.35}.otd-metric strong span{display:block;color:#98b8cf;font-size:10px;font-weight:500;margin-top:2px}.otd-explainer-note{font-size:11px;line-height:1.6;color:#8cabc5;margin-top:5px}
+/* Firma: página web dentro de un teléfono, con resumen al lado. */
+.otd-sign-layout{grid-template-columns:minmax(0,1fr) minmax(265px,.93fr)}.otd-sign-panel{min-width:0}.otd-sign-summary{padding:6px 15px;border:1px solid rgba(255,255,255,.12);border-radius:12px;background:rgba(255,255,255,.06);margin:5px 0 14px}.otd-sign-summary>div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:11px}.otd-sign-summary>div:last-child{border:0}.otd-sign-summary span{color:#9db8d0}.otd-sign-summary strong{font-size:11px;color:#e7f2fc;text-align:right}.otd-sign-note{font-size:11px;color:#9ebbd3}.otd-sign-device{position:relative;justify-self:center;width:min(100%,330px);height:100%;max-height:535px;min-height:0;background:#f8fbfe;color:#17324c;border:7px solid #142232;border-radius:31px;overflow:hidden;box-shadow:0 20px 55px rgba(0,0,0,.36);display:flex;flex-direction:column}.otd-sign-browser{height:39px;flex-shrink:0;display:flex;align-items:center;gap:8px;background:#fff;border-bottom:1px solid #e0e8f0;padding:0 12px;color:#8295a7;font-size:13px}.otd-sign-browser span:nth-child(2){flex:1;min-width:0;text-align:center;background:#f3f6f9;padding:5px;border-radius:6px;font-size:10px}.otd-sign-content{position:relative;flex:1;min-height:0;overflow-y:auto;padding:17px 17px 20px;scrollbar-width:thin;background:linear-gradient(#fff,#f4f8fc)}.otd-sign-logo{font-size:15px;font-weight:900;color:#185FA5;margin-bottom:13px}.otd-sign-logo span{font-size:9px;vertical-align:top;color:#378ADD}.otd-sign-pill{display:inline-block;padding:5px 8px;border-radius:999px;background:#eaf3fd;color:#185FA5;font-size:8px;font-weight:800;letter-spacing:.4px}.otd-sign-content h3{font-size:20px;font-weight:900;color:#173b5b;margin:10px 0 5px}.otd-sign-content>p{color:#758a9d;font-size:10.5px;line-height:1.5;margin-bottom:12px}.otd-sign-order{padding:10px 11px;background:#eff5fa;border:1px solid #e0eaf3;border-radius:8px;font-size:11px;font-weight:800;color:#315a7c;margin-bottom:12px}.otd-sign-order span{display:block;color:#28875e;font-size:9px;margin-top:3px}.otd-sign-label{display:block;font-size:10px;color:#526d83;font-weight:800;margin:12px 0 6px}.otd-sign-input{padding:10px 11px;border:1px solid #d7e2eb;border-radius:7px;background:#fff;font-size:11px;color:#294b68}.otd-sign-pad{height:105px;border:1.5px dashed #aac4d9;border-radius:8px;background:#fff;position:relative;overflow:hidden;transition:border-color .2s,box-shadow .2s}.otd-sign-pad.is-focused{border-color:#378ADD;box-shadow:0 0 0 3px rgba(55,138,221,.1)}.otd-sign-pad>span{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;color:#9aabba;font-size:11px;transition:opacity .2s}.otd-sign-pad svg{position:absolute;inset:9px;width:calc(100% - 18px);height:calc(100% - 18px)}.otd-sign-pad path{fill:none;stroke:#183b58;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1}.otd-sign-pad.is-signed path{animation:otdDraw 1.35s ease forwards}.otd-sign-pad.is-signed>span{opacity:0}.otd-sign-confirm{width:100%;background:#185FA5;border:0;color:#fff;border-radius:7px;padding:12px;font-size:11px;font-weight:800;margin-top:13px;transition:transform .2s,background .2s}.otd-sign-confirm.is-pressed{transform:scale(.97);background:#0C447C}.otd-sign-legal{font-size:9px;color:#9badbc;text-align:center;line-height:1.45;margin-top:9px}.otd-sign-success{position:absolute;inset:39px 0 0;background:linear-gradient(#fff,#f3f9fe);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:22px;opacity:0;visibility:hidden;transform:translateY(12px);transition:.4s}.otd-sign-success.is-visible{opacity:1;visibility:visible;transform:none}.otd-success-icon,.otd-finish-icon{display:grid;place-items:center;border-radius:50%;background:#e3f8ec;color:#1b9a53;font-weight:900}.otd-success-icon{width:68px;height:68px;font-size:32px}.otd-sign-success h3{font-size:22px;margin:17px 0 5px;color:#173b5b}.otd-sign-success p{font-size:13px;color:#58758c;margin:0 0 16px}.otd-sign-success>div:not(.otd-success-icon){padding:9px 13px;border-radius:7px;background:#eaf3fd;color:#185FA5;font-size:11px;font-weight:800}.otd-sign-success small{font-size:10px;color:#8096a8;line-height:1.5;margin-top:12px}
+/* Cierre del ciclo. */
+.otd-finish-scene{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px}.otd-finish-icon{width:66px;height:66px;font-size:32px;margin-bottom:22px;box-shadow:0 0 0 9px rgba(37,211,102,.055)}.otd-finish-scene>span{font-size:10px;letter-spacing:1.7px;color:#8bc3f6;font-weight:800}.otd-finish-scene h3{font-size:clamp(29px,3.6vw,45px);line-height:1.12;color:#fff;font-weight:900;letter-spacing:-1.4px;margin:14px 0}.otd-finish-scene h3 em{color:#75baff;font-style:normal}.otd-finish-scene p{color:#c7dced;font-size:14px;line-height:1.6}.otd-finish-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin:25px 0}.otd-finish-pills span{font-size:10px;font-weight:700;padding:8px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.13);background:rgba(255,255,255,.06);color:#d7e8f5}.otd-finish-scene>strong{font-size:12px;color:#9fcaed;font-weight:700}
+.otd-footer{min-height:52px;padding:9px 17px;display:flex;align-items:center;justify-content:space-between;gap:12px}.otd-footer-copy{display:flex;align-items:center;gap:9px;color:#b9d2e5;font-size:11px;line-height:1.4;min-width:0}.otd-footer-spark{color:#65b7ff;font-size:17px}.otd-controls{display:flex;gap:6px;flex-shrink:0}.otd-controls button{width:31px;height:31px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.14);border-radius:8px;background:rgba(255,255,255,.065);color:#d5e6f3;font-size:17px;line-height:1}.otd-controls button:hover{background:rgba(255,255,255,.15)}
+@keyframes otdMessageIn{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}@keyframes otdDraw{to{stroke-dashoffset:0}}
+@media(max-width:1250px){.hero-inner{grid-template-columns:minmax(285px,.8fr) minmax(0,1.4fr);gap:30px}.hero-copy h1{font-size:clamp(34px,3.4vw,45px)}.otd-stage{min-height:440px}.otd-order-scene{padding:13px}.otd-portal-content{padding:15px 16px 12px}.otd-form-grid{gap:9px 10px}.otd-order-types{margin:10px 0}.otd-form-head h3{font-size:20px}.otd-chat-layout,.otd-sign-layout{gap:16px;padding:14px 17px}.otd-chat-explainer h3,.otd-sign-panel h3{font-size:23px}.otd-phone{width:min(100%,305px)}}
+@media(max-width:1080px){.hero{padding:112px 4.5% 60px}.hero-inner{grid-template-columns:minmax(0,1fr);gap:34px;max-width:900px}.hero-copy{max-width:850px}.hero-copy h1{font-size:clamp(36px,5vw,48px);max-width:740px}.hero-copy>p:not(.hero-note){max-width:760px;font-size:17px}.hero-visual.otd-root{max-width:none}.otd-stage{min-height:480px;max-height:590px}.otd-chat-layout,.otd-sign-layout{gap:30px;padding:18px 30px}.otd-order-scene{padding:19px}.otd-portal-content{padding:20px 25px 16px}.otd-form-grid{gap:12px}.otd-order-types{margin:15px 0}.otd-chat-explainer h3,.otd-sign-panel h3{font-size:29px}}
+@media(max-width:600px){.hero{padding:102px 17px 48px}.hero-inner{gap:26px}.hero-badge{font-size:11px;padding:6px 11px;margin-bottom:19px}.hero-copy h1{font-size:clamp(31px,8vw,40px);letter-spacing:-1.2px;margin-bottom:18px}.hero-copy>p:not(.hero-note){font-size:15px;line-height:1.7;margin-bottom:24px}.hero-ctas{gap:10px}.btn-hero-primary,.btn-hero-ghost{font-size:13px;padding:12px 16px}.hero-copy>.hero-note{font-size:11px;margin-top:15px}.hero-visual.otd-root{border-radius:14px}.otd-topbar{min-height:47px;padding:0 13px;gap:9px}.otd-top-title strong{font-size:12px}.otd-top-title span,.otd-top-url{display:none}.otd-navigation{gap:4px;padding:11px 8px}.otd-tab{font-size:9px;padding:7px 8px}.otd-tab-icon{font-size:11px;margin-right:3px}.otd-tab-arrow{font-size:10px}.otd-stage{margin:0 8px;min-height:520px;max-height:none;aspect-ratio:auto;border-radius:10px}.otd-order-scene{padding:10px}.otd-browser{border-radius:8px}.otd-browser-bar{height:30px;padding:0 9px;gap:7px}.otd-browser-address{font-size:8px;height:20px}.otd-portal{grid-template-columns:28px minmax(0,1fr)}.otd-sidebar{padding:10px 3px;gap:10px}.otd-side-logo{width:22px;height:22px;border-radius:6px;font-size:12px;margin-bottom:5px}.otd-side-icon{width:22px;height:22px;font-size:12px}.otd-portal-content{padding:13px 11px 12px}.otd-form-head h3{font-size:18px}.otd-form-overline{font-size:8px}.otd-form-head p{font-size:9px!important}.otd-order-types{gap:5px;margin:11px 0 15px}.otd-order-types span{font-size:8px;padding:5px 7px}.otd-form-grid{gap:10px}.otd-field-label{font-size:9px}.otd-input{min-height:35px;font-size:11px;padding:7px 8px}.otd-input.otd-textarea{min-height:54px}.otd-section-label{font-size:8px}.otd-client-info{font-size:8px}.otd-form-actions{padding-top:11px}.otd-create{font-size:11px;padding:10px 12px}.otd-chat-layout,.otd-sign-layout{display:flex;flex-direction:column;justify-content:center;align-items:stretch;gap:0;padding:11px 10px}.otd-phone{width:min(100%,310px);height:100%;min-height:0;max-height:none;flex:1;border-width:6px;border-radius:26px}.otd-chat-explainer{display:none}.otd-chat-layout{height:100%}.otd-sign-panel{display:none}.otd-sign-device{width:min(100%,310px);height:100%;flex:1;max-height:none;border-width:6px;border-radius:26px}.otd-sign-content{padding:16px 15px}.otd-sign-pad{height:112px}.otd-finish-scene{padding:20px}.otd-finish-scene h3{font-size:30px}.otd-finish-scene p{font-size:12px}.otd-finish-pills{gap:6px;margin:20px 0}.otd-finish-pills span{font-size:9px;padding:7px 8px}.otd-footer{padding:8px 11px;min-height:48px}.otd-footer-copy{font-size:10px}.otd-footer-spark{font-size:14px}.otd-controls button{width:29px;height:29px}}
+@media(max-width:360px){.otd-tab{font-size:8px;padding:7px 6px}.otd-tab-icon{display:none}.otd-stage{min-height:500px}.otd-order-types span{font-size:7.5px;padding:5px}.otd-portal-content{padding:11px 8px}.otd-form-grid{gap:8px}.otd-input{font-size:10.5px}.otd-message{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.otd-root *{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+/* Ajustes de legibilidad y contención verificados en escritorio y móvil. */
+.otd-stage{width:calc(100% - 30px);min-height:520px;max-height:590px}
+.otd-portal-content{position:relative;overflow:hidden;padding:0;display:flex;flex-direction:column}
+.otd-form-scroll{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin;padding:20px clamp(16px,2.1vw,28px) 12px;overscroll-behavior:contain}
+.otd-form-actions{flex-shrink:0;position:relative;z-index:2;margin:0;padding:10px clamp(16px,2.1vw,28px) 14px;background:#fff;border-top:1px solid #edf1f6}
+.otd-toast{bottom:67px;z-index:3}
+body.otd-demo-visible .wa-float{opacity:0;visibility:hidden;pointer-events:none;transform:translateY(12px)}
+@media(max-width:1250px){.otd-stage{min-height:520px}.otd-form-scroll{padding:15px 16px 10px}.otd-form-actions{padding:9px 16px 12px}}
+@media(max-width:1080px){.otd-stage{min-height:530px}.otd-form-scroll{padding:20px 25px 12px}.otd-form-actions{padding:10px 25px 14px}}
+@media(max-width:600px){.otd-stage{width:calc(100% - 16px);min-height:540px;max-height:none}.otd-form-scroll{padding:13px 11px 10px}.otd-form-actions{padding:9px 11px 11px}.otd-toast{bottom:57px}}
+@media(max-width:360px){.otd-stage{min-height:520px}.otd-form-scroll{padding:11px 8px 8px}.otd-form-actions{padding:8px}}
+
 </style>
 </head>
 <body>
@@ -655,13 +489,11 @@
   <a href="https://app.opertrack.com" class="btn-primary" onclick="toggleMenu()">Empieza gratis</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
+<!-- HERO: demo web horizontal, autocontenido y sin contador -->
+<section class="hero" id="inicio">
   <div class="hero-inner">
-    <div>
-      <div class="hero-badge">
-        <span></span> Diseñado para PYMEs de Centroamérica y el Caribe
-      </div>
+    <div class="hero-copy">
+      <div class="hero-badge"><span></span> Diseñado para PYMEs de Centroamérica y el Caribe</div>
       <h1>Tu operación técnica, <em>en tiempo real</em></h1>
       <p>Quién está trabajando ahora, en qué orden y cuántas horas lleva — sin llamadas ni cuadernos. Tus técnicos marcan por WhatsApp y Opertrack lo convierte en jornadas, horas extras y nómina lista para pagar.</p>
       <div class="hero-ctas">
@@ -670,228 +502,77 @@
       </div>
       <p class="hero-note">Sin tarjeta de crédito · Configuración en minutos · Soporte en español</p>
     </div>
-    <div class="hero-visual hero-web-demo" id="heroWebDemo" aria-label="Demo animado: creación de una orden, ejecución por WhatsApp y firma del cliente">
-      <div class="demo-topbar">
-        <div class="mockup-dot" style="background:#ef4444"></div>
-        <div class="mockup-dot" style="background:#fbbf24"></div>
-        <div class="mockup-dot" style="background:#4ade80"></div>
-        <span class="mockup-title">OPERTRACK · DEMO EN VIVO</span>
+    <div class="hero-visual otd-root" id="opertrackHeroDemo" aria-label="Recorrido ilustrativo de una orden de trabajo, desde su creación hasta la firma del cliente">
+      <div class="otd-topbar">
+        <div class="otd-window-dots" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="otd-top-title"><strong>Opertrack</strong><span>Del operador al cliente</span></div>
+        <span class="otd-top-url">app.opertrack.com</span>
       </div>
-      <div class="demo-stagebar" aria-hidden="true">
-        <span class="demo-step active" id="demoStep1">1 · Crear orden</span>
-        <span class="demo-arrow">→</span>
-        <span class="demo-step" id="demoStep2">2 · Técnico por WhatsApp</span>
-        <span class="demo-arrow">→</span>
-        <span class="demo-step" id="demoStep3">3 · Firma del cliente</span>
+      <div class="otd-navigation" aria-label="Etapas del recorrido">
+        <button type="button" class="otd-tab is-active" data-otd-tab="order" aria-current="step"><span class="otd-tab-icon">▦</span> Crear orden</button>
+        <span class="otd-tab-arrow" aria-hidden="true">→</span>
+        <button type="button" class="otd-tab" data-otd-tab="chat"><span class="otd-tab-icon">◉</span> WhatsApp</button>
+        <span class="otd-tab-arrow" aria-hidden="true">→</span>
+        <button type="button" class="otd-tab" data-otd-tab="sign"><span class="otd-tab-icon">✎</span> Firma del cliente</button>
       </div>
-
-      <div class="demo-canvas" id="demoCanvas">
-        <div class="app-window" id="demoAppWindow">
-          <div class="browser-bar">
-            <div class="browser-dots"><i></i><i></i><i></i></div>
-            <div class="browser-address"><span class="browser-lock">●</span>&nbsp; app.opertrack.com / órdenes</div>
-          </div>
-          <div class="app-screen">
-            <div class="order-card">
-              <div class="order-head">
-                <div><div class="order-title">Nueva orden</div><div class="order-sub">El número se genera automáticamente</div></div>
-                <div class="order-x">×</div>
-              </div>
-              <div class="order-tabs">
-                <span class="order-tab">Proyecto</span>
-                <span class="order-tab selected" id="fieldType">Instalación</span>
-                <span class="order-tab">Levantamiento</span>
-                <span class="order-tab">Incidencia</span>
-              </div>
-              <div class="demo-grid">
-                <div class="demo-field span-2" id="fieldClient">
-                  <span class="demo-label">Cliente *</span>
-                  <div class="field-box has-chevron placeholder"><span class="field-value">Seleccionar cliente</span></div>
-                  <div class="site-note">● frente a PM Auto Tuning · Santo Domingo</div>
+      <div class="otd-stage" data-otd-stage>
+        <div class="otd-scene otd-order-scene is-visible" data-otd-scene="order">
+          <div class="otd-browser">
+            <div class="otd-browser-bar"><div class="otd-browser-dots" aria-hidden="true"><i></i><i></i><i></i></div><div class="otd-browser-address"><span>⌁</span> app.opertrack.com / Órdenes</div><span class="otd-browser-menu">•••</span></div>
+            <div class="otd-portal">
+              <div class="otd-sidebar" aria-hidden="true"><div class="otd-side-logo">O</div><div class="otd-side-icon">▦</div><div class="otd-side-icon selected">▤</div><div class="otd-side-icon">▥</div><div class="otd-side-icon">◫</div><div class="otd-side-icon">⚙</div></div>
+              <div class="otd-portal-content">
+                <div class="otd-form-scroll">
+                <div class="otd-form-head"><div><div class="otd-form-overline">ÓRDENES DE TRABAJO</div><h3>Nueva orden</h3><p>El número se genera automáticamente</p></div><span class="otd-form-close">×</span></div>
+                <div class="otd-order-types"><span>Proyecto</span><span class="selected">Instalación</span><span>Levantamiento</span><span>Incidencia</span><span>Mantenimiento</span></div>
+                <div class="otd-form-grid">
+                  <div class="otd-field otd-full" data-otd-field="client"><span class="otd-field-label">Cliente <b>*</b></span><div class="otd-input"><span data-otd-value="client" data-placeholder="— Seleccionar cliente —">— Seleccionar cliente —</span><span class="otd-chevron">⌄</span></div><div class="otd-client-info" data-otd-client-info>📍 Frente a PM Auto Tuning · C. José Tapia Brea 247, Santo Domingo</div></div>
+                  <div class="otd-field otd-full" data-otd-field="description"><span class="otd-field-label">Descripción <b>*</b></span><div class="otd-input otd-textarea"><span data-otd-value="description" data-placeholder="Describe el trabajo a realizar...">Describe el trabajo a realizar...</span></div></div>
+                  <div class="otd-section-label otd-full">PROGRAMACIÓN</div>
+                  <div class="otd-field" data-otd-field="date"><span class="otd-field-label">Fecha prevista</span><div class="otd-input"><span data-otd-value="date" data-placeholder="dd/mm/aaaa">dd/mm/aaaa</span><span>▦</span></div></div>
+                  <div class="otd-field" data-otd-field="time"><span class="otd-field-label">Hora</span><div class="otd-input"><span data-otd-value="time" data-placeholder="--:--">--:--</span><span>◷</span></div></div>
+                  <div class="otd-field otd-full" data-otd-field="tech"><span class="otd-field-label">Asignar técnico</span><div class="otd-input"><span data-otd-value="tech" data-placeholder="Pendiente de asignar (cola de despacho)">Pendiente de asignar (cola de despacho)</span><span class="otd-chevron">⌄</span></div></div>
                 </div>
-                <div class="demo-field span-2" id="fieldDescription">
-                  <span class="demo-label">Descripción *</span>
-                  <div class="field-box multiline placeholder"><span class="field-value">Describe el trabajo a realizar...</span></div>
                 </div>
-                <div class="demo-field" id="fieldDate">
-                  <span class="demo-label">Fecha prevista</span>
-                  <div class="field-box placeholder"><span class="field-value">dd/mm/aaaa</span></div>
-                </div>
-                <div class="demo-field" id="fieldTime">
-                  <span class="demo-label">Hora</span>
-                  <div class="field-box placeholder"><span class="field-value">--:-- ----</span></div>
-                </div>
-                <div class="demo-field span-2" id="fieldTech">
-                  <span class="demo-label">Asignar técnico</span>
-                  <div class="field-box has-chevron placeholder"><span class="field-value">Pendiente de asignar (cola de despacho)</span></div>
-                </div>
-              </div>
-              <div class="status-row">
-                <span class="status-pill">Abierta</span>
-                <button class="create-order-btn" id="createOrderBtn" type="button" tabindex="-1">Crear orden</button>
+                <div class="otd-form-actions"><span class="otd-draft">Cancelar</span><button type="button" class="otd-create" data-otd-create>Crear orden →</button></div>
+                <div class="otd-toast" data-otd-toast><span>✓</span><div><strong>Orden creada y asignada</strong><small>PRO-2026-0005 · Pedro López</small></div></div>
               </div>
             </div>
           </div>
+          <div class="otd-cursor" data-otd-cursor aria-hidden="true"><svg viewBox="0 0 28 36" fill="none"><path d="M3 2v27l7-6 5 10 5-2-5-10h9L3 2Z" fill="white" stroke="#173B5C" stroke-width="2" stroke-linejoin="round"/></svg></div>
         </div>
-
-        <div class="order-success" id="orderSuccess" aria-hidden="true">
-          <div class="success-check">✓</div>
-          <div class="success-title">Orden creada y asignada</div>
-          <div class="success-sub">Notificando a Pedro López por WhatsApp…</div>
-        </div>
-
-        <div class="phone-shell" id="demoPhone" aria-hidden="true">
-          <div class="phone-screen">
-            <div class="wa-view" id="waView">
-              <div class="wa-head">
-                <div class="wa-avatar">CO</div>
-                <div><div class="wa-name">Chatbot Opertrack</div><div class="wa-online">WhatsApp</div></div>
-                <div class="wa-phase" id="waPhase">Asignación</div>
-                <div class="wa-menu">⋮</div>
-              </div>
-              <div class="wa-chat" id="waChat">
-                <div class="wa-chip">Hoy</div>
-
-                <div class="wa-message in long" id="waAssignment">
-                  <strong>📋 Nueva asignación</strong><br><br>
-                  Hola Pedro, Grullon Ortiz Philia te asignó una orden de trabajo:<br><br>
-                  🔧 Orden: <strong>PRO-2026-0005</strong><br>
-                  📅 Fecha: 2026-09-07<br>
-                  🕐 Hora: 9:00 p. m.<br><br>
-                  Responde <strong>INICIO</strong> para ver los detalles.
-                  <span class="wa-time">2:19 p. m.</span>
-                </div>
-
-                <div class="wa-message out" id="waInicio">inicio <span class="wa-time">2:19 p. m. ✓✓</span></div>
-
-                <div class="wa-message in long" id="waOrders">
-                  <strong>👋 Pedro Lopez</strong><br>
-                  🕐 02:19 PM<br><span class="wa-sep">─────────────────</span><br><br>
-                  📌 <strong>Órdenes (1):</strong><br><br>
-                  <strong>1 — PRO-2026-0005</strong><br>
-                  &nbsp;&nbsp;🏢 GO Refrigeración<br>
-                  &nbsp;&nbsp;📝 Instalación Aire 12BTU<br>
-                  &nbsp;&nbsp;🧰 Proyecto · 🟡 Media<br>
-                  &nbsp;&nbsp;📅 07/09/2026 · 🕐 9:00 PM<br><br>
-                  Comandos: responde con el número para iniciar.
-                  <span class="wa-time">2:19 p. m.</span>
-                </div>
-
-                <div class="wa-message out" id="waStartOne">1 <span class="wa-time">2:20 p. m. ✓✓</span></div>
-
-                <div class="wa-message in metric" id="waCheckin">
-                  <strong>✅ Check-in registrado</strong><br>
-                  🕐 2:20 PM · Líder ⭐<br><br>
-                  📋 PRO-2026-0005<br>
-                  🏢 GO Refrigeración<br><br>
-                  ¡Adelante Pedro! 💪<br>
-                  <small>PAUSA · TRASLADO · FIN · INICIO</small>
-                  <span class="wa-time">2:20 p. m.</span>
-                </div>
-
-                <div class="wa-message out" id="waFin">fin <span class="wa-time">2:20 p. m. ✓✓</span></div>
-
-                <div class="wa-message in long metric" id="waClose">
-                  <strong>🔔 Cerrar actividad</strong><br>
-                  <span class="wa-sep">─────────────────</span><br>
-                  📋 PRO-2026-0005<br>
-                  🏢 GO Refrigeración<br>
-                  ⏱️ Tiempo: <span class="wa-hours">4 Horas</span><br>
-                  👤 Rol: Líder ⭐<br>
-                  <span class="wa-sep">─────────────────</span><br><br>
-                  <strong>1 — Fin definitivo ✅</strong><br>&nbsp;&nbsp;&nbsp;Orden completada<br><br>
-                  2 — Fin del día 🌙<br>&nbsp;&nbsp;&nbsp;Regreso otro día<br><br>
-                  3 — Pausa temporal ⏸️<br>&nbsp;&nbsp;&nbsp;Regreso hoy más tarde
-                  <span class="wa-time">2:20 p. m.</span>
-                </div>
-
-                <div class="wa-message out" id="waCloseOne">1 <span class="wa-time">2:20 p. m. ✓✓</span></div>
-
-                <div class="wa-message in note" id="waBeforeNote">
-                  <strong>📝 Antes de continuar</strong><br><br>
-                  Cuéntame cómo quedó la actividad, alguna novedad con el cliente, el equipo, o algo importante que debamos saber.
-                  <span class="wa-time">2:20 p. m.</span>
-                </div>
-
-                <div class="wa-message out note" id="waNote">La instalación se ejecutó sin eventualidad.<span class="wa-time">2:25 p. m. ✓✓</span></div>
-
-                <div class="wa-message in note" id="waNoteSaved">
-                  <strong>✅ Nota registrada</strong><br><br>
-                  ¿Hay algo más que agregar?<br><br>
-                  <strong>SI</strong> — Agregar otra nota<br>
-                  <strong>NO</strong> — Finalizar
-                  <span class="wa-time">2:25 p. m.</span>
-                </div>
-
-                <div class="wa-message out" id="waNo">No <span class="wa-time">2:25 p. m. ✓✓</span></div>
-
-                <div class="wa-message in long metric" id="waClosed">
-                  <strong>✅ Orden cerrada</strong><br><br>
-                  📋 PRO-2026-0005<br>
-                  ⏱️ Total: <span class="wa-hours">4 Horas</span><br><br>
-                  ¡Excelente Pedro! 🎉<br><br>
-                  📸 <strong>Evidencia del trabajo</strong><br>
-                  Envía 1 a 5 fotos del trabajo terminado y te comparto el enlace para la firma del cliente.<br><br>
-                  📋 1 nota registrada.
-                  <span class="wa-time">2:25 p. m.</span>
-                </div>
-
-                <div class="wa-message in signature-msg long" id="waSignature">
-                  <strong>✅ Foto 1/5 guardada</strong> en PRO-2026-0005.<br><br>
-                  <strong>🖊️ Firma del cliente</strong><br>
-                  Pásale tu teléfono al cliente para que firme aquí:
-                  <span class="wa-link-text">app.opertrack.com/?firma=••••••••</span>
-                  <button class="wa-sign-link" id="waSignLink" type="button" tabindex="-1">Abrir enlace seguro de firma →</button>
-                  <span class="wa-time">2:25 p. m.</span>
-                </div>
-              </div>
-              <div class="wa-input">☺ &nbsp; Escribe un mensaje <span class="wa-send">➤</span></div>
+        <div class="otd-scene otd-chat-scene" data-otd-scene="chat">
+          <div class="otd-chat-layout">
+            <div class="otd-phone" aria-label="Conversación ilustrativa de WhatsApp con el técnico">
+              <div class="otd-phone-top"><span></span></div>
+              <div class="otd-wa-header"><div class="otd-wa-back">‹</div><div class="otd-wa-avatar">O</div><div class="otd-wa-contact"><strong>Chatbot Opertrack</strong><small>WhatsApp</small></div><span class="otd-wa-menu">⋮</span></div>
+              <div class="otd-chat-messages" data-otd-messages></div>
+              <div class="otd-wa-input"><span>＋</span><span>Escribe un mensaje</span><span>➤</span></div>
             </div>
-
-            <div class="sign-view" id="signView" aria-hidden="true">
-              <div class="sign-browser-bar">
-                <span class="sign-browser-back">‹</span>
-                <div class="sign-browser-address">● &nbsp; firma.opertrack.com</div>
-                <span class="sign-browser-menu">⋮</span>
-              </div>
-              <div class="sign-page">
-                <div class="sign-brand">OPERTRACK</div>
-                <div class="sign-form" id="signForm">
-                  <div class="sign-kicker">PRO-2026-0005</div>
-                  <div class="sign-title">Firma del servicio</div>
-                  <div class="sign-sub">GO Refrigeración · Instalación Aire 12BTU</div>
-                  <div class="sign-detail-row"><span>Fecha</span><strong>07/09/2026</strong></div>
-                  <div class="sign-detail-row"><span>Técnico</span><strong>Pedro López</strong></div>
-                  <label class="sign-label">Nombre del cliente</label>
-                  <div class="sign-name-box">Manuel</div>
-                  <label class="sign-label">Firma del cliente</label>
-                  <div class="signature-pad" id="signaturePad">
-                    <span class="signature-hint">Firma aquí</span>
-                    <svg viewBox="0 0 240 78" aria-hidden="true">
-                      <path class="signature-stroke" d="M18 55 C27 25 36 69 47 44 C56 24 59 65 70 48 C80 31 83 57 95 50 C108 42 112 34 116 51 C120 66 129 28 136 43 C143 58 148 58 155 42 C164 23 170 62 178 49 C185 39 188 43 197 51 C207 59 214 44 224 46"/>
-                    </svg>
-                  </div>
-                  <button class="sign-confirm-btn" id="confirmSignBtn" type="button" tabindex="-1">Confirmar firma</button>
-                </div>
-                <div class="sign-success" id="signSuccess">
-                  <div class="sign-success-icon">✓</div>
-                  <div class="sign-success-title">Firma registrada</div>
-                  <div class="sign-success-sub">La orden PRO-2026-0005 quedó completada.</div>
-                  <div class="sign-success-pill">Servicio finalizado</div>
-                </div>
-              </div>
+            <div class="otd-chat-explainer">
+              <span class="otd-eyebrow">OPERACIÓN EN CAMPO</span>
+              <h3 data-otd-chat-title>La orden llega al técnico.</h3>
+              <p data-otd-chat-desc>Pedro recibe su asignación directamente en WhatsApp, sin instalar otra aplicación.</p>
+              <div class="otd-info-card"><span class="otd-info-icon" data-otd-info-icon>↗</span><div><small>ETAPA ACTUAL</small><strong data-otd-chat-phase>Asignación</strong></div></div>
+              <div class="otd-metric"><span class="otd-metric-icon">◷</span><div><small>CONTROL DE TIEMPO</small><strong>Inicio y fin de cada actividad <span>Duración registrada por orden</span></strong></div></div>
+              <div class="otd-explainer-note">El técnico responde con comandos sencillos y la operación queda vinculada a su orden.</div>
             </div>
           </div>
         </div>
-
-        <div class="demo-cursor" id="demoCursor" aria-hidden="true">
-          <svg viewBox="0 0 24 30" xmlns="http://www.w3.org/2000/svg"><path d="M2 1.8v22.5l5.5-5.2 3.9 8.6 4-1.9-4-8.4h7.5L2 1.8Z" fill="#fff" stroke="#0c1b28" stroke-width="1.4" stroke-linejoin="round"/></svg>
+        <div class="otd-scene otd-sign-scene" data-otd-scene="sign">
+          <div class="otd-sign-layout">
+            <div class="otd-sign-panel"><span class="otd-eyebrow">CIERRE DIGITAL</span><h3>El cliente firma desde el mismo teléfono.</h3><p>El técnico comparte el enlace y la aceptación queda vinculada a la orden.</p><div class="otd-sign-summary"><div><span>Orden</span><strong>PRO-2026-0005</strong></div><div><span>Cliente</span><strong>GO Refrigeración</strong></div><div><span>Actividad</span><strong>Instalación Aire 12BTU</strong></div><div><span>Registro</span><strong>Vinculado a la orden</strong></div></div><span class="otd-sign-note">Sin instalar aplicaciones adicionales.</span></div>
+            <div class="otd-sign-device"><div class="otd-sign-browser"><span>‹</span><span>⌁ &nbsp;app.opertrack.com</span><span>⋮</span></div><div class="otd-sign-content" data-otd-sign-content><div class="otd-sign-logo">Opertrack <span>✦</span></div><span class="otd-sign-pill">CONFIRMACIÓN DE SERVICIO</span><h3>Firma del cliente</h3><p>Revisa los datos y firma para confirmar el servicio.</p><div class="otd-sign-order">PRO-2026-0005 <span>✓ Servicio realizado</span></div><label class="otd-sign-label">Nombre del cliente</label><div class="otd-sign-input">Manuel Moreno</div><label class="otd-sign-label">Firma del cliente</label><div class="otd-sign-pad" data-otd-sign-pad><span data-otd-sign-hint>Firma aquí con tu dedo</span><svg viewBox="0 0 500 120" preserveAspectRatio="xMidYMid meet" aria-hidden="true"><path data-otd-sign-path pathLength="1" d="M18 91 C58 26,86 105,119 66 C143 36,145 108,176 76 C214 36,222 94,257 66 C291 41,293 93,325 71 C347 55,353 81,381 66 C407 53,421 57,470 67"/></svg></div><button type="button" class="otd-sign-confirm" data-otd-confirm>Confirmar firma →</button><div class="otd-sign-legal">Al firmar confirmas la realización del servicio descrito.</div></div><div class="otd-sign-success" data-otd-sign-success><div class="otd-success-icon">✓</div><h3>Firma registrada</h3><p>Servicio finalizado</p><div>PRO-2026-0005</div><small>La aceptación quedó vinculada a la orden.</small></div></div>
+          </div>
         </div>
+        <div class="otd-scene otd-finish-scene" data-otd-scene="finish"><div class="otd-finish-icon">✓</div><span>UN FLUJO, TODO CONECTADO</span><h3>Del operador al cliente.<br><em>Todo trazable.</em></h3><p>Órdenes, horas, evidencia y firma en un solo lugar.</p><div class="otd-finish-pills"><span>Orden creada</span><span>Horas registradas</span><span>Nota y evidencia</span><span>Firma registrada</span></div><strong>Opertrack · Tu operación técnica, en tiempo real.</strong></div>
       </div>
-      <div class="demo-footer"><span class="demo-live-dot"></span>Demo interactivo · Orden → Ejecución → Evidencia → Firma</div>
+      <div class="otd-footer"><div class="otd-footer-copy"><span class="otd-footer-spark">✦</span><span data-otd-caption>Selecciona el cliente y crea una orden en segundos.</span></div><div class="otd-controls"><button type="button" data-otd-restart aria-label="Repetir recorrido" title="Repetir recorrido">↺</button><button type="button" data-otd-pause aria-label="Pausar recorrido" title="Pausar recorrido">Ⅱ</button></div></div>
+      <div class="otd-sr-only" data-otd-announcement aria-live="polite" aria-atomic="true"></div>
     </div>
   </div>
 </section>
+
 
 <!-- SOCIAL PROOF -->
 <div class="social-proof">
@@ -1094,227 +775,201 @@
     document.getElementById('mobileMenu').classList.remove('open');
   });
 
-  // Demo web nativo del flujo completo: Portal → WhatsApp → Firma del cliente.
-  (function initHeroWebDemo(){
-    const root = document.getElementById('heroWebDemo');
-    const canvas = document.getElementById('demoCanvas');
-    const cursor = document.getElementById('demoCursor');
-    const step1 = document.getElementById('demoStep1');
-    const step2 = document.getElementById('demoStep2');
-    const step3 = document.getElementById('demoStep3');
-    if (!root || !canvas || !cursor) return;
 
-    const els = {
-      type: document.getElementById('fieldType'),
-      client: document.getElementById('fieldClient'),
-      description: document.getElementById('fieldDescription'),
-      date: document.getElementById('fieldDate'),
-      time: document.getElementById('fieldTime'),
-      tech: document.getElementById('fieldTech'),
-      button: document.getElementById('createOrderBtn'),
-      success: document.getElementById('orderSuccess'),
-      waChat: document.getElementById('waChat'),
-      waPhase: document.getElementById('waPhase'),
-      assignment: document.getElementById('waAssignment'),
-      inicio: document.getElementById('waInicio'),
-      orders: document.getElementById('waOrders'),
-      startOne: document.getElementById('waStartOne'),
-      checkin: document.getElementById('waCheckin'),
-      fin: document.getElementById('waFin'),
-      close: document.getElementById('waClose'),
-      closeOne: document.getElementById('waCloseOne'),
-      beforeNote: document.getElementById('waBeforeNote'),
-      note: document.getElementById('waNote'),
-      noteSaved: document.getElementById('waNoteSaved'),
-      no: document.getElementById('waNo'),
-      closed: document.getElementById('waClosed'),
-      signatureMsg: document.getElementById('waSignature'),
-      signLink: document.getElementById('waSignLink'),
-      signView: document.getElementById('signView'),
-      signaturePad: document.getElementById('signaturePad'),
-      confirmSign: document.getElementById('confirmSignBtn')
-    };
-
-    const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-    const valueOf = el => el?.querySelector('.field-value');
-    const messages = [els.assignment,els.inicio,els.orders,els.startOne,els.checkin,els.fin,els.close,els.closeOne,els.beforeNote,els.note,els.noteSaved,els.no,els.closed,els.signatureMsg].filter(Boolean);
-
-    function setStage(stage){
-      [step1,step2,step3].forEach((el,i)=>el?.classList.toggle('active', i === stage-1));
-    }
-    function setField(el, value, completed=true){
-      const box = el?.querySelector('.field-box');
-      const valueEl = valueOf(el);
-      if (valueEl) valueEl.textContent = value;
-      if (box) box.classList.toggle('placeholder', !completed);
-      el?.classList.toggle('completed', completed);
-    }
-    function focusField(el){
-      document.querySelectorAll('.demo-field.focused').forEach(x => x.classList.remove('focused'));
-      if (el) el.classList.add('focused');
-    }
-    function pointTo(el, xRatio=.72, yRatio=.58){
-      if (!el) return;
-      const c = canvas.getBoundingClientRect();
-      const r = el.getBoundingClientRect();
-      cursor.style.left = Math.max(4, r.left - c.left + r.width*xRatio) + 'px';
-      cursor.style.top = Math.max(4, r.top - c.top + r.height*yRatio) + 'px';
-    }
-    async function clickAt(el, xRatio=.70, yRatio=.55){
-      pointTo(el,xRatio,yRatio);
-      await wait(420);
-      cursor.classList.add('clicking');
-      if (el === els.button || el === els.signLink || el === els.confirmSign) el.classList.add('demo-pressed');
-      await wait(210);
-      cursor.classList.remove('clicking');
-      if (el === els.button || el === els.signLink || el === els.confirmSign) el.classList.remove('demo-pressed');
-    }
-    async function typeInto(el, text){
-      const valueEl = valueOf(el); const box = el?.querySelector('.field-box');
-      if (!valueEl || !box) return;
-      valueEl.textContent=''; box.classList.remove('placeholder');
-      for (const ch of text){ valueEl.textContent += ch; await wait(34); }
-      el.classList.add('completed');
-    }
-    function setWaPhase(label){
-      if (els.waPhase) els.waPhase.textContent = label;
-    }
-    async function showMessage(el, delay=0, phase=''){
-      if (delay) await wait(delay);
-      messages.forEach(x => x.classList.remove('phase-focus'));
-      if (phase) setWaPhase(phase);
-      el?.classList.add('visible','phase-focus');
-      await wait(70);
-      if (els.waChat) {
-        els.waChat.scrollTo({ top: els.waChat.scrollHeight, behavior: 'smooth' });
-      }
-    }
-    function reset(){
-      root.classList.remove('phone-mode','signature-mode','cursor-mode');
-      setStage(1);
-      els.success?.classList.remove('show');
-      messages.forEach(x=>x.classList.remove('visible','phase-focus'));
-      setWaPhase('Asignación');
-      if (els.waChat) els.waChat.scrollTop = 0;
-      els.signaturePad?.classList.remove('active','signed');
-      els.signView?.classList.remove('complete');
-      setField(els.client,'Seleccionar cliente',false);
-      setField(els.description,'Describe el trabajo a realizar...',false);
-      setField(els.date,'dd/mm/aaaa',false);
-      setField(els.time,'--:-- ----',false);
-      setField(els.tech,'Pendiente de asignar (cola de despacho)',false);
-      focusField(null);
-      cursor.style.opacity='1';
-      cursor.style.display='block';
-      pointTo(els.type,.7,.6);
-    }
-
-    async function run(){
-      reset();
-      await wait(650);
-      await clickAt(els.type);
-
-      focusField(els.client); pointTo(els.client,.76,.62); await wait(360);
-      setField(els.client,'GO Refrigeración (Empresa)',true); await wait(520);
-
-      focusField(els.description); pointTo(els.description,.58,.58); await wait(300);
-      await typeInto(els.description,'Instalación Aire 12BTU'); await wait(430);
-
-      focusField(els.date); pointTo(els.date,.72,.62); await wait(280);
-      setField(els.date,'07/09/2026',true); await wait(340);
-      focusField(els.time); pointTo(els.time,.70,.62); await wait(260);
-      setField(els.time,'09:00 p. m.',true); await wait(430);
-
-      focusField(els.tech); pointTo(els.tech,.75,.62); await wait(300);
-      setField(els.tech,'Pedro López',true); await wait(520);
-      focusField(null);
-
-      await clickAt(els.button);
-      els.success?.classList.add('show'); await wait(850);
-      els.success?.classList.remove('show');
-
-      root.classList.add('phone-mode'); setStage(2);
-
-      // WhatsApp reproduce cada fase del trabajo tal como la vive el técnico.
-      await showMessage(els.assignment,650,'Asignación');
-      await wait(1200);
-      await showMessage(els.inicio,420,'Asignación');
-      await wait(420);
-
-      await showMessage(els.orders,420,'Órdenes');
-      await wait(1350);
-      await showMessage(els.startOne,420,'Iniciar orden');
-      await wait(420);
-
-      await showMessage(els.checkin,420,'Check-in');
-      await wait(1100);
-      await showMessage(els.fin,550,'Cerrar actividad');
-      await wait(380);
-
-      await showMessage(els.close,420,'Cierre · 4 horas');
-      await wait(1500);
-      await showMessage(els.closeOne,420,'Fin definitivo');
-      await wait(420);
-
-      await showMessage(els.beforeNote,420,'Nota de cierre');
-      await wait(1200);
-      await showMessage(els.note,420,'Nota de cierre');
-      await wait(850);
-      await showMessage(els.noteSaved,420,'Nota registrada');
-      await wait(1100);
-      await showMessage(els.no,420,'Finalizar');
-      await wait(420);
-
-      await showMessage(els.closed,420,'Evidencia');
-      await wait(1550);
-      await showMessage(els.signatureMsg,520,'Firma del cliente');
-      await wait(1350);
-
-      // El técnico entrega el teléfono al cliente y abre el enlace de firma.
-      if (els.waChat) els.waChat.scrollTop = els.waChat.scrollHeight;
-      root.classList.add('cursor-mode');
-      await clickAt(els.signLink,.74,.55);
-      root.classList.add('signature-mode');
-      setStage(3);
-      await wait(650);
-
-      // El cliente firma directamente en la página web abierta desde el enlace.
-      pointTo(els.signaturePad,.42,.54); await wait(430);
-      els.signaturePad?.classList.add('active');
-      cursor.classList.add('clicking'); await wait(180); cursor.classList.remove('clicking');
-      els.signaturePad?.classList.add('signed');
-      await wait(1200);
-      els.signaturePad?.classList.remove('active');
-
-      await clickAt(els.confirmSign,.70,.55);
-      els.signView?.classList.add('complete');
-      root.classList.remove('cursor-mode');
-      await wait(2300);
-    }
-
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      setField(els.client,'GO Refrigeración (Empresa)',true);
-      setField(els.description,'Instalación Aire 12BTU',true);
-      setField(els.date,'07/09/2026',true); setField(els.time,'09:00 p. m.',true); setField(els.tech,'Pedro López',true);
-      root.classList.add('phone-mode','signature-mode'); setStage(3); setWaPhase('Firma del cliente');
-      messages.forEach(x=>x.classList.add('visible'));
-      els.signaturePad?.classList.add('signed');
-      els.signView?.classList.add('complete');
-      cursor.style.display='none';
-      return;
-    }
-
-    let active = true;
-    const observer = new IntersectionObserver(entries => { active = entries[0]?.isIntersecting ?? true; }, {threshold:.15});
-    observer.observe(root);
-    (async function loop(){
-      while(true){
-        if (active && document.visibilityState === 'visible') await run();
-        else await wait(800);
-      }
-    })();
-  })();
 </script>
 
+<script>
+/* Opertrack · Recorrido ilustrativo. No realiza solicitudes ni modifica datos. */
+(function initOpertrackHorizontalDemo(){
+  'use strict';
+  const root=document.getElementById('opertrackHeroDemo');
+  if(!root)return;
+  const q=s=>root.querySelector(s), qa=s=>Array.from(root.querySelectorAll(s));
+  const stage=q('[data-otd-stage]'), chat=q('[data-otd-messages]');
+  const caption=q('[data-otd-caption]'), announcement=q('[data-otd-announcement]');
+  const cursor=q('[data-otd-cursor]');
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  const CANCEL=Symbol('cancelled');
+  let generation=0,paused=false,inView=true;
+  const fields={client:'GO Refrigeración (Empresa)',description:'Instalación Aire 12BTU',date:'07/09/2026',time:'09:00 p. m.',tech:'Pedro López'};
+  const labels={
+    order:'Selecciona el cliente y crea una orden en segundos.',
+    chat:'El técnico recibe y ejecuta su orden desde WhatsApp.',
+    sign:'El cliente confirma el servicio con su firma digital.',
+    finish:'Orden, horas, evidencia y firma. Todo conectado.'
+  };
+  function check(token){if(token!==generation)throw CANCEL;}
+  async function wait(ms,token){
+    let remaining=ms;
+    while(remaining>0){
+      check(token);
+      if(paused||!inView||document.hidden){await new Promise(r=>setTimeout(r,100));continue;}
+      const slice=Math.min(remaining,75),start=performance.now();
+      await new Promise(r=>setTimeout(r,slice));
+      remaining-=Math.min(slice,performance.now()-start);
+    }
+    check(token);
+  }
+  function setPause(value){
+    paused=value;
+    const btn=q('[data-otd-pause]');
+    btn.textContent=value?'▶':'Ⅱ';
+    btn.setAttribute('aria-label',value?'Reanudar recorrido':'Pausar recorrido');
+    btn.title=value?'Reanudar recorrido':'Pausar recorrido';
+    btn.setAttribute('aria-pressed',String(value));
+  }
+  function scene(name){
+    qa('[data-otd-scene]').forEach(el=>el.classList.toggle('is-visible',el.dataset.otdScene===name));
+    qa('[data-otd-tab]').forEach(el=>{
+      const active=el.dataset.otdTab===(name==='finish'?'sign':name);
+      el.classList.toggle('is-active',active);
+      if(active)el.setAttribute('aria-current','step');else el.removeAttribute('aria-current');
+    });
+    caption.textContent=labels[name];
+    announcement.textContent=labels[name];
+    root.dataset.otdCurrent=name;
+  }
+  function fill(name,value){
+    const field=q('[data-otd-field="'+name+'"]'),el=q('[data-otd-value="'+name+'"]');
+    if(!field||!el)return;
+    el.textContent=value;
+    field.classList.toggle('is-placeholder',!value||value===el.dataset.placeholder);
+  }
+  function focus(name){qa('.otd-field.is-focused').forEach(el=>el.classList.remove('is-focused'));if(name)q('[data-otd-field="'+name+'"]')?.classList.add('is-focused');}
+  function populateOrder(){Object.entries(fields).forEach(([k,v])=>fill(k,v));q('[data-otd-client-info]').classList.add('is-visible');}
+  function reset(){
+    scene('order');
+    Object.keys(fields).forEach(k=>{const el=q('[data-otd-value="'+k+'"]');fill(k,el.dataset.placeholder);});
+    focus(null);q('[data-otd-client-info]').classList.remove('is-visible');
+    q('[data-otd-toast]').classList.remove('is-visible');q('[data-otd-create]').classList.remove('is-pressed');
+    cursor.classList.remove('is-visible','is-clicking');chat.replaceChildren();chat.scrollTop=0;
+    q('[data-otd-sign-pad]').classList.remove('is-focused','is-signed');
+    q('[data-otd-sign-success]').classList.remove('is-visible');
+    q('[data-otd-confirm]').classList.remove('is-pressed');
+    q('[data-otd-chat-title]').textContent='La orden llega al técnico.';
+    q('[data-otd-chat-desc]').textContent='Pedro recibe su asignación directamente en WhatsApp, sin instalar otra aplicación.';
+    q('[data-otd-chat-phase]').textContent='Asignación';
+    q('[data-otd-info-icon]').textContent='↗';
+    if(reduce.matches)cursor.style.display='none';else cursor.style.display='';
+  }
+  async function ensureVisible(el,token){
+    const scroll=q('.otd-form-scroll'),r=el.getBoundingClientRect(),s=scroll.getBoundingClientRect();
+    let delta=0;
+    if(r.bottom>s.bottom-12)delta=r.bottom-s.bottom+16;
+    else if(r.top<s.top+12)delta=r.top-s.top-16;
+    if(delta){scroll.scrollBy({top:delta,behavior:reduce.matches?'instant':'smooth'});await wait(330,token);}
+  }
+  async function point(el,token,x=.74,y=.58){
+    if(!el)return;
+    await ensureVisible(el,token);
+    const s=stage.getBoundingClientRect(),r=el.getBoundingClientRect();
+    cursor.style.left=(r.left-s.left+r.width*x)+'px';
+    cursor.style.top=(r.top-s.top+r.height*y)+'px';
+    cursor.classList.add('is-visible');
+    await wait(360,token);
+  }
+  async function click(el,token){await point(el,token);cursor.classList.add('is-clicking');el.classList.add('is-pressed');await wait(160,token);cursor.classList.remove('is-clicking');el.classList.remove('is-pressed');}
+  async function type(name,text,token){
+    const el=q('[data-otd-value="'+name+'"]');el.textContent='';
+    for(const ch of text){check(token);el.textContent+=ch;await wait(28,token);}
+  }
+  async function orderSequence(token){
+    scene('order');await wait(350,token);
+    const client=q('[data-otd-field="client"]');
+    focus('client');await point(client,token);fill('client',fields.client);q('[data-otd-client-info]').classList.add('is-visible');await wait(440,token);
+    focus('description');await point(q('[data-otd-field="description"]'),token);await type('description',fields.description,token);await wait(320,token);
+    focus('date');await point(q('[data-otd-field="date"]'),token);fill('date',fields.date);await wait(260,token);
+    focus('time');await point(q('[data-otd-field="time"]'),token);fill('time',fields.time);await wait(340,token);
+    focus('tech');await point(q('[data-otd-field="tech"]'),token);fill('tech',fields.tech);await wait(500,token);
+    focus(null);await click(q('[data-otd-create]'),token);cursor.classList.remove('is-visible');
+    q('[data-otd-toast]').classList.add('is-visible');
+    caption.textContent='Orden PRO-2026-0005 creada y asignada a Pedro López.';
+    await wait(1250,token);
+  }
+  const div='<span class="otd-msg-div"></span>';
+  const msg=(title,body)=>'<strong class="otd-msg-title">'+title+'</strong>'+body;
+  const line=text=>'<span class="otd-msg-line">'+text+'</span>';
+  const messages=[
+    {phase:'Asignación',icon:'↗',title:'La orden llega al técnico.',desc:'Pedro recibe los datos del servicio y puede responder desde el WhatsApp que ya utiliza.',hold:2300,html:msg('📋 Nueva asignación',line('Hola Pedro, Grullon Ortiz Philia te asignó una orden de trabajo:')+div+line('🔧 Orden: <strong>PRO-2026-0005</strong>')+line('📅 Fecha: 2026-09-07')+line('🕐 Hora: 9:00 p. m.')+div+line('Responde <strong>INICIO</strong> para ver los detalles.'))},
+    {phase:'INICIO',icon:'◉',title:'Un comando para consultar las órdenes.',desc:'El bot responde con las asignaciones disponibles para el técnico.',hold:650,me:true,html:'inicio'},
+    {phase:'Órdenes',icon:'▤',title:'Toda la información antes de salir.',desc:'Cliente, descripción, fecha, hora y prioridad quedan disponibles en la conversación.',hold:2400,html:msg('👋 Pedro Lopez',line('🕐 02:19 PM')+div+line('📌 Órdenes (1):')+line('<strong>1 — PRO-2026-0005</strong>')+line('🏢 GO Refrigeración')+line('📝 Instalación Aire 12BTU')+line('🧰 Proyecto · 🟡 Media')+line('📅 07/09/2026')+line('🕐 9:00 PM')+div+line('Responde con el número para iniciar.'))},
+    {phase:'Iniciar orden',icon:'→',title:'Selecciona la orden con un número.',desc:'El técnico responde 1 para iniciar la actividad asignada.',hold:600,me:true,html:'1'},
+    {phase:'Check-in',icon:'✓',title:'Check-in registrado.',desc:'El inicio queda asociado a la orden y al técnico que ejecuta el trabajo.',hold:2000,html:msg('✅ Check-in registrado',line('🕐 2:20 PM · Líder ⭐')+div+line('📋 PRO-2026-0005')+line('🏢 GO Refrigeración')+div+line('¡Adelante Pedro! 💪')+line('Comandos: PAUSA | TRASLADO | FIN | INICIO'))},
+    {phase:'FIN',icon:'◷',title:'El cierre empieza desde el chat.',desc:'Al terminar, el técnico indica FIN y el bot presenta las opciones disponibles.',hold:650,me:true,html:'fin'},
+    {phase:'Cierre de actividad',icon:'◷',title:'Elige cómo termina la actividad.',desc:'El tiempo de trabajo queda registrado para cada actividad, junto con sus opciones de cierre.',hold:2600,html:msg('🔔 Cerrar actividad',line('📋 PRO-2026-0005')+line('🏢 GO Refrigeración')+'<span class="otd-msg-highlight">⏱️ Tiempo: 4 Horas</span>'+line('👤 Rol: Líder ⭐')+div+line('<strong>1 — Fin definitivo ✅</strong>')+line('Orden completada')+line('2 — Fin del día 🌙')+line('Regreso otro día')+line('3 — Pausa temporal ⏸️')+line('Regreso hoy más tarde'))},
+    {phase:'Fin definitivo',icon:'✓',title:'El técnico selecciona el cierre definitivo.',desc:'Opertrack continúa con el registro de novedades antes de cerrar la orden.',hold:650,me:true,html:'1'},
+    {phase:'Nota de cierre',icon:'✎',title:'Registra cómo quedó el trabajo.',desc:'Las observaciones del técnico quedan documentadas para seguimiento y consultas posteriores.',hold:1900,html:msg('📝 Antes de continuar',line('Cuéntame cómo quedó la actividad, alguna novedad con el cliente, el equipo, o algo importante que debamos saber.'))},
+    {phase:'Nota de cierre',icon:'✎',title:'La novedad queda por escrito.',desc:'Una nota sencilla evita depender de llamadas o mensajes sueltos para saber qué ocurrió.',hold:1700,me:true,html:'La instalación se ejecutó sin eventualidad.'},
+    {phase:'Nota registrada',icon:'✓',title:'El bot confirma la nota.',desc:'El técnico puede agregar otra observación o continuar con el cierre.',hold:1700,html:msg('✅ Nota registrada',line('¿Hay algo más que agregar?')+div+line('<strong>SI</strong> — Agregar otra nota')+line('<strong>NO</strong> — Finalizar'))},
+    {phase:'Finalizar',icon:'→',title:'Sin más novedades, continúa.',desc:'La orden pasa a la etapa de evidencia fotográfica.',hold:600,me:true,html:'No'},
+    {phase:'Evidencia',icon:'▧',title:'El trabajo queda documentado.',desc:'La orden reúne el cierre, el tiempo, la nota y las fotografías del trabajo terminado.',hold:2400,html:msg('✅ Orden cerrada',line('📋 PRO-2026-0005')+'<span class="otd-msg-highlight">⏱️ Total: 4 Horas</span>'+line('¡Excelente Pedro! 🎉')+div+line('📸 <strong>Evidencia del trabajo</strong>')+line('Envía 1 a 5 fotos del trabajo terminado y te comparto el enlace para la firma del cliente.')+line('📋 1 nota registrada.'))},
+    {phase:'Foto registrada',icon:'▧',title:'La foto se vincula a la orden.',desc:'La evidencia queda organizada junto al servicio, lista para el cierre con el cliente.',hold:1700,html:msg('✅ Foto 1/5 guardada',line('PRO-2026-0005')+div+'<div class="otd-msg-photo">▧<br>Foto ilustrativa del trabajo</div>'+line('Evidencia vinculada a la orden.'))},
+    {phase:'Firma del cliente',icon:'✎',title:'El cliente firma desde el teléfono.',desc:'El técnico comparte el enlace seguro y el cliente confirma el servicio en una página web.',hold:3000,html:msg('🖊️ Firma del cliente',line('Pásale tu teléfono al cliente para que firme aquí:')+'<span class="otd-msg-link">app.opertrack.com/?firma=••••••••</span><button type="button" class="otd-msg-action" data-otd-open-sign>Abrir enlace de firma →</button>')}
+  ];
+  function setChatContext(m){q('[data-otd-chat-title]').textContent=m.title;q('[data-otd-chat-desc]').textContent=m.desc;q('[data-otd-chat-phase]').textContent=m.phase;q('[data-otd-info-icon]').textContent=m.icon;caption.textContent=m.phase+' · '+m.title;}
+  async function addMessage(m,token){
+    check(token);setChatContext(m);
+    const el=document.createElement('div');el.className='otd-message'+(m.me?' is-me':'');el.innerHTML=m.html;
+    chat.appendChild(el);
+    await wait(60,token);
+    chat.scrollTo({top:chat.scrollHeight,behavior:reduce.matches?'instant':'smooth'});
+    await wait(m.hold,token);
+  }
+  async function chatSequence(token){scene('chat');await wait(360,token);for(const m of messages)await addMessage(m,token);await wait(500,token);}
+  async function signSequence(token){
+    scene('sign');await wait(700,token);
+    const pad=q('[data-otd-sign-pad]');pad.classList.add('is-focused');await wait(450,token);
+    pad.classList.add('is-signed');await wait(1550,token);pad.classList.remove('is-focused');
+    const btn=q('[data-otd-confirm]');btn.classList.add('is-pressed');await wait(200,token);btn.classList.remove('is-pressed');
+    q('[data-otd-sign-success]').classList.add('is-visible');caption.textContent='Firma registrada · Servicio finalizado.';
+    await wait(2500,token);
+  }
+  function staticStage(name){
+    reset();populateOrder();scene(name);
+    if(name==='chat'){
+      for(const m of messages){const el=document.createElement('div');el.className='otd-message'+(m.me?' is-me':'');el.innerHTML=m.html;chat.appendChild(el);}
+      setChatContext(messages[messages.length-1]);chat.scrollTop=chat.scrollHeight;
+    }
+    if(name==='sign'||name==='finish'){
+      q('[data-otd-sign-pad]').classList.add('is-signed');
+      q('[data-otd-sign-success]').classList.add('is-visible');
+    }
+    cursor.classList.remove('is-visible');
+  }
+  async function drive(token,first){
+    let next=first;
+    try{
+      while(token===generation){
+        reset();
+        if(next!=='order')populateOrder();
+        if(next==='order')await orderSequence(token);
+        if(next==='order'||next==='chat')await chatSequence(token);
+        if(next==='order'||next==='chat'||next==='sign')await signSequence(token);
+        scene('finish');await wait(4200,token);
+        next='order';
+      }
+    }catch(e){if(e!==CANCEL)console.error('Opertrack demo:',e);}
+  }
+  function start(name='order'){
+    const token=++generation;
+    if(reduce.matches){setPause(true);staticStage(name);return;}
+    setPause(false);drive(token,name);
+  }
+  qa('[data-otd-tab]').forEach(btn=>btn.addEventListener('click',()=>start(btn.dataset.otdTab)));
+  q('[data-otd-restart]').addEventListener('click',()=>start('order'));
+  q('[data-otd-pause]').addEventListener('click',()=>{if(reduce.matches){start('order');return;}setPause(!paused);});
+  root.addEventListener('click',event=>{
+    const btn=event.target.closest('button');if(!btn||!root.contains(btn))return;
+    if(btn.matches('[data-otd-open-sign]'))start('sign');
+    if(btn.matches('[data-otd-create]'))start('chat');
+    if(btn.matches('[data-otd-confirm]')){const token=++generation;staticStage('sign');caption.textContent='Firma registrada · Servicio finalizado.';if(!reduce.matches){setPause(false);drive(token,'finish');}}
+  });
+  const observer=new IntersectionObserver(entries=>{inView=entries[0]?.isIntersecting??true;document.body.classList.toggle('otd-demo-visible',inView);},{threshold:.08});
+  observer.observe(root);
+  reduce.addEventListener?.('change',()=>start(reduce.matches?'finish':'order'));
+  start(reduce.matches?'finish':'order');
+})();
+
+</script>
 </body>
 </html>
