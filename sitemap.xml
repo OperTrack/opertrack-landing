@@ -1,15 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+  sitemap.xml — opertrack.com
+
+  Las direcciones van SIN la extensión .html porque Cloudflare Pages la
+  quita automáticamente: /terminos.html redirige a /terminos. Listar la
+  versión con extensión obligaría a Google a seguir una redirección en
+  cada una, y el sitemap debe apuntar al destino final.
+
+  app.opertrack.com queda fuera a propósito: es la aplicación, no
+  contenido que deba aparecer en resultados de búsqueda.
+-->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://opertrack.com/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://app.opertrack.com/</loc>
-    <lastmod>2026-09-04</lastmod>
+    <loc>https://opertrack.com/actualizaciones</loc>
+    <lastmod>2026-09-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://opertrack.com/integraciones</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://opertrack.com/ayuda</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://opertrack.com/documentacion</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://opertrack.com/sobre</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://opertrack.com/contacto</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://opertrack.com/blog</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://opertrack.com/terminos</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://opertrack.com/privacidad</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://opertrack.com/reembolsos</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
 </urlset>
